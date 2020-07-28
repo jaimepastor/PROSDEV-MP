@@ -9,7 +9,7 @@ Group members:
 6. Jaime Pastor
 
 # Project Description
--UNDER CONSTRUCTION-
+Gameshare is a simulation of a video game rental website, where people are free to browse video games across different platforms and genres for games that they might want to rent for themselves. It also allows its users to put their own games up for rent as well, as long as they have created their very own account.
 
 # IMPORTANT LINKS
 - [Trello](https://trello.com/b/WKCIKJj7/prosdev-game-share)
