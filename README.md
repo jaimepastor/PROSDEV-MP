@@ -16,8 +16,12 @@ Gameshare is a simulation of a video game rental website, where people are free 
 - [Shared Drive](https://drive.google.com/drive/folders/0AB6d6f5Zdtw8Uk9PVA)
 - [Role Refresher (Canvas Link)](https://dlsu.instructure.com/courses/38003/pages/guidelines-for-team-roles?module_item_id=376949)
 
-# How to run
-TODO: Setup build scripts and start scripts
+# How to install project (using command line git)
+```
+> cd <filepath of target folder to clone in>
+> git clone https://github.com/jaimepastor/PROSDEV-MP.git
+> npm install
+```
 
 # Dependencies
 1. body-parser
@@ -27,3 +31,18 @@ TODO: Setup build scripts and start scripts
 5. hbs
 6. moment
 7. mongoose
+
+# Dev-Dependencies
+1. jest
+
+# How to run unit tests
+```
+> cd <root path e.g. ../PROSDEV-MP>
+> npm test
+```
+
+# How to run the server
+```
+> cd <root path e.g. ../PROSDEV-MP>
+> node app.js
+```
