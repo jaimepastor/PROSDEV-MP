@@ -1,4 +1,4 @@
-# PROSDEV-MP
+# Gameshare
 In partial fulfillment of the course PROSDEV or Professional Software Development.
 Group members:
 1. Santiago Alvarez
