@@ -15,7 +15,7 @@ function validation(user){
 describe('Login Test', () =>{
     describe('Form Validation', ()=>{
         test('All forms are filled properly', ()=>{
-            const loginData = {email: "stevenmail.com", password: "secret"}
+            const loginData = {email: "steven@mail.com", password: "secret"}
 
             expect(validation(loginData)).toBe(true)
         })
