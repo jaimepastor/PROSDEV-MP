@@ -69,7 +69,7 @@
                 function updateList(){
                     var selectedConsole = $("#select-console").val();
                     var selectedGenre = $("#select-genre").val();
-                    var searchTerm = $(".search-bar").val();
+                    var searchTerm = $(".search-bar").val().toLowerCase();
                     $(".product").remove();
                     $(".noresult").remove();
                     {{#each games}}
