@@ -52,7 +52,7 @@
                         var titlestr = '{{title}}';
                         var postimgid = 'id_' + titlestr.replace(/ /g, '');
                         if(userstr === '{{user}}'){
-                           $(".listing-items").append('<div class="product">' +
+                           $(".listing-items").append('<div id = "{{ _id}}" class="product">' +
                                                                 '<div id = "' + postimgid + '"></div>' +
                                                                 '<div class="details">' +
                                                                     '<div class="product-title">{{title}}</div>' +
@@ -80,8 +80,15 @@
                             $('[id="'+ gameimgid +'"]').append('<a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>');
                         {{/each}}
                     }
+                    {{#each errors}}
+                    $('#{{container-id}}').append('<span class="tooltip-text">' + '{{message}}' + '</span>');
+                    $('#{{container-id}}').css({"border-bottom": "2px solid #fd8f4b"});
+                    console.log("hello")
+                    {{/each}}
                     
                 });
+
+                
             </script>
             
         </div>
