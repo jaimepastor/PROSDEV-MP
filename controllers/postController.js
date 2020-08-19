@@ -100,22 +100,6 @@ router.post("/deleteListing", function(req, res){
             Post.delete(id)
             res.redirect("/user/profile")         
         }
-        else{
-            errors = []
-            errors.push({"container-id": id, "message": "Video game is currently being rented"})
-            console.log(errors)
-            currUser = req.session.email
-            User.getUser(currUser).then((newUser)=>{
-                Post.getAll().then((posts)=>{
-                    Game.getAll().then((games)=>{
-                        res.render("profile.hbs", {
-                           errors, newUser, posts, games
-                        })
-                    })
-                })
-                
-            })
-        }
     })
 })
     
