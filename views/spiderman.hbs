@@ -32,9 +32,9 @@
             </div>
         </div>
         <div class="modal-footer">
-            <form method="POST" action="/review/new-review">
-                <input type = "text" class = "review_textbox" placeholder="Leave a review!" name="review">
-                <button id="reviewSubmit" type="submit" class="rent_button">SUBMIT</button>
+            <form id = "reviewForm" method="POST" action="/review/new-review">
+                <input type = "text" id = "review_text" class = "review_textbox" placeholder="Leave a review!" name="review">
+                <button id="reviewSubmit" class="rent_button">SUBMIT</button>
                 <input type="hidden" id="hiddenPostID" value="" name="postID">
             </form>
             
@@ -162,7 +162,15 @@
                 })
 
                 $("#reviewSubmit").click(function(){
-                    alert("Review submitted!");
+        
+                    if(!$("#review_text").val()){
+                        alert("Please input review!");
+                    }
+                    else{
+                        document.getElementById("reviewForm").submit()
+                        alert("Review submitted!");
+                    }
+                    
                 })
 
             })
