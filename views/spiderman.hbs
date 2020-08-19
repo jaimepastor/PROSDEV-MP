@@ -163,8 +163,8 @@
 
                 $("#reviewSubmit").click(function(){
         
-                    if(!$("#review_text").val()){
-                        alert("Please input review!");
+                    if(!$("#review_text").val().trim()){
+                        alert("Please input valid review!");
                     }
                     else{
                         document.getElementById("reviewForm").submit()
