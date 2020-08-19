@@ -100,9 +100,6 @@ router.post("/deleteListing", function(req, res){
             Post.delete(id)
             res.redirect("/user/profile")         
         }
-        else{
-            //insert prompt here : Game is currently being rented
-        }
     })
 })
     
