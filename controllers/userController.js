@@ -101,6 +101,18 @@ router.post("/login", function(req, res){
                 res.redirect("/game/games")
                 // res.render("dashboard.hbs")
             }
+            else{
+                User.getUser(user.email).then((newUser)=>{
+                    req.session.errors = []
+                    if(!newUser)
+                        req.session.errors.push({"container-id": "email","message": "Invalid email address"})
+                    else
+                        req.session.errors.push({"container-id": "password","message": "Password is incorrect"})
+        
+                    req.session.savedinput = [{"container-id": "email", "content": user.email}]
+                    res.redirect("/user/loginpage")
+                })
+            }
         }, (error)=>{
             res.sendFile(error)
         })
