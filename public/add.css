@@ -57,6 +57,12 @@
     font-family: ralewayregular;
 }
 
+.item-sub-label{
+    color: #fff;
+    font-family: ralewayregular;
+    font-size: 10;
+}
+
 .input-field{
     width: 100%;
     height: 30px;
