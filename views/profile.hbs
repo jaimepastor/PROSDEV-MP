@@ -44,6 +44,7 @@
             </div>
             
             <script>
+
                 $(document).ready(function(){
                     $(".product").remove();
                     $(".noresult").remove();
@@ -80,10 +81,10 @@
                             $('[id="'+ gameimgid +'"]').append('<a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>');
                         {{/each}}
                     }
-                   
-
-                    $("#deleteButton").click(function(){
+                
+                    $(document).on('click', '#deleteButton', function(event){
                         var temp = $(this).attr("name")
+                        console.log(temp)
                         if(temp == "Available"){
                             if(confirm('Are you sure you want to delete this listing?')){
                                 document.getElementById("deleteForm").submit()
@@ -91,9 +92,11 @@
                             
                         }
                         else{
-                            alert("Video game is currently being rented")
+                            event.preventDefault()
+                                alert("Video game is currently being rented")                            
                         }
-                    })
+                })
+                    
                     
                 });
 
