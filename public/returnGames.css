@@ -1,0 +1,389 @@
+/*--------------------FONTS USED--------------------*/
+@font-face {
+    font-family: ralewayregular;
+    src: url(fonts/ralewayregular.ttf);
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: ralewaysemibold;
+    src: url(fonts/ralewaysemibold.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: lemonmilk;
+    src: url(fonts/lemonmilk.otf);
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*----------------------------------------------------*/
+*{
+    list-style: none;
+    font-family: ralewaysemibold;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #464646;
+}
+
+.dashboard-container{
+    background-color:#464646;
+    height: 100%;
+/*    width: 100%;*/
+    margin: 0px;
+    overflow-x: hidden;
+    flex-direction: column;
+}
+
+.content-container{
+/*    height: 100%;*/
+    width: 100%;
+    margin: 0px;
+    display: inline-flex;
+    flex-wrap: wrap; 
+    flex-direction: column;
+}
+
+.details-container{
+    height: 17em;
+    width: 80%;
+    position: absolute;
+    z-index: 2;
+    border-style: none;
+    padding: 15px;
+    padding-left: 20px;
+    margin-left: 10%;
+}
+
+
+.product-image-container {
+    height: 11.375em;
+    width: 11.53875em;
+    position: relative;
+    margin-left: 3%;
+    margin-top: 0%;
+    top: 1em;
+    z-index: 60;
+}
+
+.product-image{
+    height: 100%;
+    width: 100%;
+    position: absolute; 
+}
+
+.product-container{
+    position: absolute;
+    height: 75%;
+    width: 80%;
+    top: 1em;
+    display: flex;
+    left: 20%;
+    
+}
+
+.product-name{
+    font-family: ralewaysemibold;
+    color: white;
+    font-size: 26px;
+/*    position: absolute;*/
+}
+
+.details-list{
+    list-style: none;
+    display: inline;
+}
+
+.details{
+    color: #d4d4d4;
+    font-family: ralewayregular;
+    font-size: 18px;
+    margin-top: 5px;
+    padding-left: 10px;
+    
+}
+
+#release-label, #genre-label, .rating-label, .user-rating-label{
+    font-family: ralewayregular;
+    color: white;
+}
+
+#release, #genre, #rating-label{
+    font-family: ralewayregular;
+    color: white;
+}
+
+.rating-container{
+    display: inline-flex;
+    padding-top: 12px;
+    width: 80%;
+    color: white;
+    height: 1.5em;
+}
+
+.rating-label{
+    font-size: 18px;
+    
+}
+
+.rating{
+    font-size: 18px;
+    font-family: ralewayregular;
+    padding-left: 10px;
+}
+
+
+.description-container{
+    display: flex;
+    padding-top: 7px;
+    width: 100%;
+    color: black;
+    
+}
+
+.description-label{
+    font-size: 20px;
+    color: #333;
+    
+}
+
+.description-container p{
+    font-size: 20px;
+    font-family: ralewayregular;
+    flex-wrap: wrap;
+    margin-left: 15px;
+    line-height: 1.5;
+}
+
+.body-container{
+    height: 50%;
+    width: 90%;
+    margin: 0;
+    background-color: #fff;
+    padding: 3%;
+    position: relative;
+    top: 16.875em;
+/*    display: block;*/
+}
+
+.available-container{
+    display: flex;
+    margin-top: 10px;
+}
+
+.available-label{
+    font-size: 24px;
+    font-family: ralewaysemibold;
+    color: black;
+    margin-top: 20px;
+}
+
+.product{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 200px;
+    display: block;
+}
+
+.available-image{
+    height: 200px;
+}
+
+.available-details{
+    margin-top: 15px;
+    color: black;
+}
+
+.product-title{
+    font-size: 16px;
+    color:#fd8f4b;
+    margin-bottom: 5px;
+
+}
+
+.price{
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-family: ralewayregular;
+}
+
+.product,.available-details,.price{
+    text-align: center;
+}
+
+.rent_days{
+    height: 30px;
+    width: 150px;
+    background-color:#fd8f4b;
+    padding: 5px;
+    color: white;
+    font-family: ralewayregular;
+    text-align: center;
+    align-content: center;
+    line-height: 30px;
+    margin-top: 5px;
+    border-style: none;
+}
+
+.rent_button{
+    height: 33%;
+    width: 150px;
+    background-color:#fd8f4b;
+    padding: 5px;
+    color: black;
+    font-family: ralewayregular;
+    text-align: center;
+    align-content: center;
+    display: inline-block;
+    margin-top: 5px;
+    border-style: none;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.rent_button:hover{
+    background-color: #f66d18;
+    cursor: pointer;
+}
+
+.return-button{
+    height: 40px;
+    width: 150px;
+    background-color:#fd8f4b;
+    padding: 5px;
+    color: white;
+    font-family: ralewayregular;
+    text-align: center;
+    line-height: 30px;
+    border-style: none;
+    border-radius: 3px;
+    float: right;
+    position: relative;
+    top: 60%;
+    
+}
+
+#1{
+    float: left;
+}
+
+#title{
+    margin-left: 5%;
+    margin-top: 3%;
+    color: white;
+}
+
+.left_info{
+    width: 45%;
+    padding-top: 14px;
+}
+
+
+
+.important_info{
+    font-weight: bold;
+    font-size: medium;
+    margin-bottom: 1%;
+    margin-left: 2%;
+}
+.details_lower{
+    margin-top: 2%;
+    height: 45%;
+    width: 38%;
+    padding-top: 3px ;
+    
+}
+#details_left{
+    margin-top: 2%;
+    height: 45%;
+    width: 38%;
+    padding-top: 3px ;
+    margin-left: 2%;
+}
+.input_number{
+    width: 10%;
+    height: 100%;
+    font-family: ralewayregular;
+    border: none;
+    background-color: #fd8f4b;
+    color: black;
+    text-align: center;
+    font-size: 100%;
+    font-weight: bold;
+    font-size: large
+}
+
+.input_number:focus{
+    outline: none;
+    font-size: large;
+}
+
+.days_divide{
+    display: flex;
+}
+
+.days_display{
+    color: white;
+    font-family: ralewayregular;
+    font-size: large;
+    margin-left: 2%;
+}
+
+.indiv_listing{
+    background-color: #373737;
+    box-shadow: 2px 2px 2px #00000054;
+    width: 90%;
+    margin-left: 5%;
+    margin-top:1%;
+    height: 30%;
+    display: flex;
+    padding-bottom: 2%;
+}
+
+.fix{
+    display: flex;
+}
+.label_number{
+    margin-left: 8%;
+    color: white;
+    font-family: ralewayregular;
+    width: 2%;
+    margin-top: 3%;
+    font-size: medium;
+}
+
+.empty-label{
+    margin-left: 5%;
+    color: #FFF;
+    margin-top: 20px;
+}
+.post-container{
+    height: 70%;
+}
+
+/*SCROLLBARS*/
+*{
+  scrollbar-width: thin;
+  scrollbar-color: #373737 #464646;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: #464646;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #373737;
+  border-radius: 0;
+  border: 3px solid #464646;
+}

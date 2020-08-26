@@ -234,18 +234,33 @@
     flex-grow: 1;
 }
 
+.button-group{
+    position: absolute;
+    right: 1%;
+    top: 23%;
+}
+
+a{
+    text-decoration: none;
+}
+
 .history-button{
     height: 30px;
     width: 300px;
     background-color:#fd8f4b;
-    padding: 5px;
+    padding: 5px; 
+    border-style: none;
+    border-radius: 3px;
     color: white;
     font-family: ralewayregular;
     text-align: center;
     line-height: 30px;
-    border-style: none;
-    border-radius: 3px;
-    float: right;
+    margin: 5px; 
+}
+
+.history-button:hover{
+    background-color: #f66d18;
+    cursor: pointer;
 }
 
 .buttons{
