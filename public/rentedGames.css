@@ -286,26 +286,7 @@ body{
     padding-top: 14px;
 }
 
-.dropdown-field{
-    width: 85%;
-    height: 40px;
-    background-color: #464646;
-    color: #fff;
-    border: none;
-    margin: 10px;
-    font-size: 20px;
-}
 
-.status-label{
-    color: #fff;
-    position: relative;
-    right: 0px;
-    font-size: 15px;
-}
-
-.status-group{
-    float: right;
-}
 
 .important_info{
     font-weight: bold;

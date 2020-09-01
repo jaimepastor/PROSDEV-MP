@@ -178,29 +178,10 @@
 }
 
 .listing-header{
-    margin-top: 55px;
-    margin-left: 20px;
+    margin-top: 100px;
+    margin-left: 33px;
     margin-right: 20px;
     overflow: hidden;
-}
-
-.listing-button{
-    height: 30px;
-    width: 300px;
-    background-color:#fd8f4b;
-    padding: 5px;
-    color: white;
-    font-family: ralewayregular;
-    text-align: center;
-    line-height: 30px;
-    border-style: none;
-    border-radius: 3px;
-    float: right;
-}
-
-.listing-button:hover{
-    background-color: #f66d18;
-    cursor: pointer;
 }
 
 .product-title{
@@ -234,11 +215,6 @@
     flex-grow: 1;
 }
 
-.button-group{
-    position: absolute;
-    right: 1%;
-    top: 23%;
-}
 
 a{
     text-decoration: none;
@@ -255,7 +231,11 @@ a{
     font-family: ralewayregular;
     text-align: center;
     line-height: 30px;
-    margin: 5px; 
+    margin-left: 5px; 
+    margin-right: 5px;
+    /* margin-bottom: 10px; */
+    margin-top: 10px;
+    float:left;
 }
 
 .history-button:hover{

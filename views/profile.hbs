@@ -30,16 +30,18 @@
                                 <div class="email">{{newUser.email}}</div>
                                 
                             </div>
-                            <div class = "button-group">
+                            {{!-- <div class = "button-group"> --}}
+                                <a href="/post/upload"><div class="history-button">ADD LISTING</div></a>
                                 <a href= "/post/return-games"><div class="history-button">RETURN GAMES</div></a>
                                 <a href="/history/history"><div class="history-button">CHECK HISTORY</div></a>
-                            </div>
+                                <a href="/history/rented-games"><div class="history-button">RENTED GAMES</div></a>
+                            
                         </div>
                     </div>
                     <div class="listing-container"> 
                         <ul class="listing-header">
                             <div class="listing-label">Listings</div>
-                            <a href="/post/upload"><div class="listing-button">ADD LISTING</div></a>
+                           
                         </ul>
                         <div class="listing-items"></div>
                     </div>
