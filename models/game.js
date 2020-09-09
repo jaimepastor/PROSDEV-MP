@@ -55,3 +55,13 @@ exports.getAll = function(){
       })
     })
   }
+
+  exports.edit = function(id, game){
+    return new Promise(function(resolve, reject){
+        Game.findOneAndUpdate({_id:id}, game).then((game)=>{
+            resolve(game)
+        }, (err)=>{
+            reject(err)
+        })
+    })
+}
