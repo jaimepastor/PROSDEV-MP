@@ -31,4 +31,12 @@ exports.add = function(history){
     })
 }
 
+exports.get = function(postID){
+    return new Promise(function(resolve, reject){
+        History.findOne({postingID: postID, returned: false}).then((history)=>{
+            resolve(history)
+        })
+    })
+}
+
 
