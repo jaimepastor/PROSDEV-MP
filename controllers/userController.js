@@ -154,8 +154,8 @@ router.get("/profile", function(req,res){
     })
 })
 
-router.get("/pf/:id", function(req,res){
-    User.get(req.params.id).then((newUser)=>{
+router.get("/pf/:email", function(req,res){
+    User.getUser(req.params.email).then((newUser)=>{
         Post.getAll().then((posts)=>{
             Game.getAll().then((games)=>{
                 res.render("viewProfile.hbs", {

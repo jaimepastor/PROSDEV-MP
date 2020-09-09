@@ -90,7 +90,7 @@
                             if(searchTerm != "" && ("{{firstName}}".toLowerCase().includes(searchTerm) || "{{lastName}}".toLowerCase().includes(searchTerm))){
                                 var fullName = '{{firstName}} {{lastName}}'
                                 $(".search-results").append('<div class="user">' +
-                                                                '<div class="user-name"><a href="/user/pf/{{_id}}">' + fullName + '</a></div>' +
+                                                                '<div class="user-name"><a href="/user/pf/{{email}}">' + fullName + '</a></div>' +
                                                                 '<div class="user-region">{{region}}</div>' +
                                                             '</div>')
                             }
