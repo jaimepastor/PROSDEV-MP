@@ -247,6 +247,8 @@ body{
     border-style: none;
     font-weight: bold;
     font-size: medium;
+    margin-right:5px;
+    margin-top: 10px;
 }
 
 .rent_button:hover{
@@ -271,6 +273,24 @@ body{
     
 }
 
+.cancel{
+    height: 33%;
+    width: 150px;
+    background-color:#D1CECE;
+    padding: 5px;
+    color: black;
+    font-family: ralewayregular;
+    text-align: center;
+    align-content: center;
+    display: inline-block;
+    margin-top: 5px;
+    border-style: none;
+    font-weight: bold;
+    font-size: medium;
+    margin-left:5px;
+    margin-top: 10px;
+}
+
 #1{
     float: left;
 }
@@ -286,7 +306,26 @@ body{
     padding-top: 14px;
 }
 
+.dropdown-field{
+    width: 85%;
+    height: 40px;
+    background-color: #464646;
+    color: #fff;
+    border: none;
+    margin: 10px;
+    font-size: 20px;
+}
 
+.status-label{
+    color: #fff;
+    position: relative;
+    right: 0px;
+    font-size: 15px;
+}
+
+.status-group{
+    float: right;
+}
 
 .important_info{
     font-weight: bold;
@@ -369,6 +408,8 @@ body{
     height: 70%;
 }
 
+
+
 /*SCROLLBARS*/
 *{
   scrollbar-width: thin;
@@ -387,4 +428,3 @@ body{
   border-radius: 0;
   border: 3px solid #464646;
 }
-

@@ -20,7 +20,7 @@
             <h1 id="title"> Rented Listings</h1>         
             
         <div class="post-container">
-            {{!-- {{#each games}} --}}
+            {{#each rentedGames}}
                 <div class="fix" id="post-item">
                     <div class="indiv_listing">
                         <div class="product-image-container">
@@ -43,7 +43,7 @@
                         <div class="details_lower">
                             <div class="details">
                                 <span id="release-label"> Rented By: </span>
-                                <span id="release">{{name}}</span>
+                                <span id="release">{{user}}</span>
                             </div>
                             <div class="details">
                                 <span id="release-label"> Email: </span>
@@ -75,7 +75,7 @@
                         
                     </div>
                 </div>
-            {{!-- {{/each}} --}}
+            {{/each}}
         </div>
     
     </body>

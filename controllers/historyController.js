@@ -3,6 +3,7 @@ const router = express.Router()
 const History = require("../models/history")
 const Game = require("../models/game")
 const Post = require("../models/post")
+const User = require("../models/user")
 const bodyparser = require("body-parser")
 const Cart = require("../models/cart")
 const { duration } = require("moment")
@@ -24,7 +25,8 @@ router.get('/history', async function(req, res){
           const postingID = history[i].postingID
           const post = await Post.get(postingID)
           const game = await Game.getTitle(post.title)
-    
+          var date = new Date(history[i].rentDate)
+          date.setDate(history[i].rentDate.getDate() + history[i].duration)
           const historyRecord = {
             title : game.title,
             platform : game.platform,
@@ -33,7 +35,7 @@ router.get('/history', async function(req, res){
             link : game.link,
             owner : post.user,
             startDate : history[i].rentDate,
-            endDate: history[i].rentDate + history[i].duration,
+            endDate: date,
             duration : history[i].duration,
             price : post.price,
             total: post.price * history[i].duration,
@@ -84,8 +86,47 @@ router.post("/newHistory", function(req,res){
 })
 
 router.get("/rented-games", function(req, res){
-    res.render("rentedGames.hbs")
+    
+    currUser = req.session.email
+    User.getUser(currUser).then((newUser)=>{
+//        console.log(newUser)
+        Post.getAll().then(async function(posts) {
+            let rentedGames = []
+            
+            for (let i in posts) {
+                if(posts[i].status == "Rented"){
+                    const game = await Game.getTitle(posts[i].title)
+                    
+                    History.get(posts[i]._id).then(async function(history){
+                        const user = await User.getUser(history.user)
+                        var date = new Date(history.rentDate)
+                        date.setDate(history.rentDate.getDate() + history.duration)
+                            const rentedGame = {
+                                title : posts[i].title,
+                                platform : game.platform,
+                                genre : game.genre,
+                                release : game.release,
+                                link : game.link,
+                                user : user.firstName + " " + user.lastName,
+                                email : user.email, 
+                                startDate : history.rentDate,
+                                endDate: date,
+                                duration : history.duration,
+                                price : posts[i].price,
+                                total: posts[i].price * history.duration,
+                                returned: history.returned
+                            }
+                            rentedGames.push(rentedGame)
+                        
+                    })
+                    }
+                
+            }
+            console.log("rentedGmes")
+            console.log(rentedGames)
+            res.render("rentedGames.hbs", {rentedGames})
+          })
 })
 
-
+})
 module.exports = router
