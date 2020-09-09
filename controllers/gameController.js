@@ -4,6 +4,7 @@ const Game = require("../models/game")
 const bodyparser = require("body-parser")
 const Post = require("../models/post")
 const Review = require("../models/reviews")
+const User = require("../models/user")
 
 const app = express()
 
@@ -72,9 +73,11 @@ router.post("/add-game", function(req, res){
 
 router.get("/games", function(req,res){
     Game.getAll().then((games)=>{
-        res.render("dashboard.hbs", {
-            games
-        })
+        User.getAll().then((users)=>{
+            res.render("dashboard.hbs", {
+                games, users
+            })
+        }) 
     })
 })
 

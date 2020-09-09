@@ -154,4 +154,8 @@ router.get("/profile", function(req,res){
     })
 })
 
+router.get("/pf/:id", function(req,res){
+    
+})
+
 module.exports = router
