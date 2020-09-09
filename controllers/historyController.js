@@ -83,4 +83,9 @@ router.post("/newHistory", function(req,res){
     })
 })
 
+router.get("/rented-games", function(req, res){
+    res.render("rentedGames.hbs")
+})
+
+
 module.exports = router
