@@ -98,13 +98,25 @@ router.get("/vg/:id", function(req,res){
     console.log(req.params.id)
     Game.get(req.params.id).then((game)=>{
         console.log(game)
-        Post.getAllPosting(game.title).then((posts)=>{
-            Review.getAll().then((reviews)=>{
-                res.render("spiderman.hbs", {
-                    game, posts, reviews
+        const temp = {
+            title: game.title,
+            platform: game.platform,
+            genre: game.genre,
+            release: game.release,
+            rating: game.rating,
+            link: game.link,
+            clicks: game.clicks +1
+        }
+        Game.edit(req.params.id, temp).then((game)=>{
+            Post.getAllPosting(game.title).then((posts)=>{
+                Review.getAll().then((reviews)=>{
+                    res.render("spiderman.hbs", {
+                        game, posts, reviews
+                    })
                 })
             })
         })
+        
     })
 })
 
