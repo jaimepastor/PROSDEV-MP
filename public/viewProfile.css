@@ -1,0 +1,315 @@
+/*--------------------FONTS USED--------------------*/
+@font-face {
+    font-family: ralewayregular;
+    src: url(fonts/ralewayregular.ttf);
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: ralewaysemibold;
+    src: url(fonts/ralewaysemibold.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: lemonmilk;
+    src: url(fonts/lemonmilk.otf);
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*----------------------------------------------------*/
+*{
+    list-style: none;
+    font-family: ralewaysemibold;
+    margin: 0;
+    padding: 0;
+}
+
+
+.dashboard-container{
+    background-color:#464646;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    max-width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.content-container{
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.user-details{
+    margin: 30px;
+    margin-top: 40px;
+    display: block;
+    color: #FFF;
+}
+
+.username{
+    font-size: 26px;
+}
+
+.location-container{
+    display: flex;
+}
+
+.location-label{
+    font-size: 22px; 
+    font-family: ralewayregular;
+}
+
+.location{
+    font-family: ralewayregular;
+    font-size: 22px;
+    margin-left: 15px;
+}
+
+.email-container{
+    display: flex;
+    font-size: 22px;
+    
+}
+
+.email-label{
+    font-size: 22px;
+    font-family: ralewayregular;
+}
+
+.email{
+    font-family: ralewayregular;
+    font-size: 22px;
+    margin-left: 15px;
+}
+
+
+.location-container{
+    display: flex;
+    margin-top: 30px;
+}
+
+.location-label{
+    font-size: 22px;
+    
+}
+
+.location{
+    font-family: ralewayregular;
+    font-size: 22px;
+    margin-left: 15px;
+}
+
+.listing-container{
+    height: 100%;
+    width: 100%;
+    top: 50%; 
+    color: #FFF;
+}
+
+.listing-label
+{
+    font-size: 24px;
+    font-family: ralewaysemibold;
+    float: left;
+}
+
+.product{
+    margin-top: 20px;
+    width: 200px;
+    display: block;
+    text-decoration: none;
+}
+
+.available-image{
+    height: 200px;
+}
+
+.available-details{
+    margin-top: 15px;
+    color: black;
+    text-decoration: none;
+}
+
+.product-title{
+    font-size: 16px;
+    text-decoration: none;
+
+}
+
+.price{
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.product,.available-details,.price{
+    text-align: center;
+}
+
+.rent-button{
+    height: 37px;
+    width: 150px;
+    background-color:#fd8f4b;
+    padding: 5px;
+    color: white;
+    font-family: ralewayregular;
+    text-align: center;
+    align-content: center;
+    display: inline-block;
+    line-height: 30px;
+    margin-top: -1px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-style: none;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+
+.rent-button:hover{
+    background-color: #f66d18;
+    cursor: pointer;
+}
+
+.listing-header{
+    margin-top: 55px;
+    margin-left: 20px;
+    margin-right: 20px;
+    overflow: hidden;
+}
+
+.listing-button{
+    height: 30px;
+    width: 300px;
+    background-color:#fd8f4b;
+    padding: 5px;
+    color: white;
+    font-family: ralewayregular;
+    text-align: center;
+    line-height: 30px;
+    border-style: none;
+    border-radius: 3px;
+    float: right;
+}
+
+.listing-button:hover{
+    background-color: #f66d18;
+    cursor: pointer;
+}
+
+.product-title{
+    color: #FFF;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.product-image{
+    height: 200px;
+    max-width: 200px;
+}
+
+.product{
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 345px;
+    min-height: 345px;
+    display: block;
+    margin: 5px;
+    background-color: #373737;
+    align-self: left;
+}
+
+.listing-items{
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.history-button{
+    height: 30px;
+    width: 300px;
+    background-color:#fd8f4b;
+    padding: 5px;
+    color: white;
+    font-family: ralewayregular;
+    text-align: center;
+    line-height: 30px;
+    border-style: none;
+    border-radius: 3px;
+    float: right;
+}
+
+.buttons{
+    display: flex;
+    padding: 15px;
+}
+
+.button{
+    text-align: center;
+    align-content: center;
+    vertical-align: middle;
+    margin: auto;
+}
+
+.fix{
+    margin-left: 25px;
+    display: flex;
+}
+
+.input_number{
+    width: 30px;
+    height: 100%;
+    font-family: ralewayregular;
+    border: none;
+    background-color: #fd8f4b;
+    color: black;
+    text-align: center;
+    font-size: 100%;
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 5px;
+}
+
+.input_number:focus{
+    outline: none;
+    font-size: large;
+}
+
+.days_divide{
+    display: flex;
+}
+
+.days_display{
+    color: white;
+    font-family: ralewayregular;
+    font-size: large;
+    margin-left: 2%;
+}
+
+/*SCROLLBARS*/
+*{
+  scrollbar-width: thin;
+  scrollbar-color: #373737 #464646;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: #464646;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #373737;
+  border-radius: 0;
+  border: 3px solid #464646;
+}

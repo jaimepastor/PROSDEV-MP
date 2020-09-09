@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/viewProfile.css">
+        <script src="/jQuery.js"></script>
+        {{!-- <meta charset="UTF-8"> --}}
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">      
+    </head>
+    
+    <body>
+        <div class="dashboard-container">
+            
+            <div id="nav"></div>
+            <script>
+                $.get("/nav.html", function(data){
+                    $("#nav").replaceWith(data).stop();
+                });
+            </script>
+            <div class="content-container">
+                <div class="content">
+                    <div class="user-details">
+                        <div class="user">
+                            <div class="username">{{newUser.firstName}} {{newUser.lastName}}</div>
+                            <div class="location-container">
+                                <div class="location-label">Region:</div>
+                                <div class="location">{{newUser.region}}</div>
+                            </div>
+                            <div class="email-container">
+                                <div class="email-label">Email:</div>
+                                <div class="email">{{newUser.email}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="listing-container"> 
+                        <div class="listing-items"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+
+                $(document).ready(function(){
+                    $(".product").remove();
+                    $(".noresult").remove();
+                    var userstr = '{{newUser.email}}'
+                    {{#each posts}}
+                        var titlestr = '{{title}}';
+                        var postimgid = 'id_' + titlestr.replace(/ /g, '');
+                        if(userstr === '{{user}}'){
+                           $(".listing-items").append('<div class="product">' +
+                                                                '<div id = "' + postimgid + '"></div>' +
+                                                                '<div class="details">' +
+                                                                    '<div class="product-title">{{title}}</div>' +
+                                                                    '<div class="release-date">Status: {{status}}</div>' +
+                                                                    '<div class="release-date">P{{price}}</div>' +
+                                                                    '<form action="/cart/add-to-cart" method="POST">' +
+                                                                    '<div class="fix">' +
+                                                                        '<input type="number" class="input_number" placeholder="3" name="duration">' +
+                                                                        '<p class="days_display"> Days</p>' +
+                                                                    '</div>' +
+                                                                    '<button class="rent-button">ADD TO CART</button>' +
+                                                                    '<input type="hidden" value="{{_id}}" name="postingID">' +
+                                                                    '</form>' +
+                                                                '</div>' +
+                                                            '</div>').hide().show('fast');
+                        }
+                    {{/each}}
+                    if(!$(".product").length){
+                        $(".listing-items").append('<div class = "noresult"> No listings available. </div>').hide().show('fast');
+                    }
+                    else{
+                        {{#each games}}
+                            var titlestr = '{{title}}';
+                            var gameimgid = 'id_' + titlestr.replace(/ /g, '');
+                            $('[id="'+ gameimgid +'"]').append('<a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>');
+                        {{/each}}
+                    }
+                    
+                    
+                });
+
+                
+            </script>
+            
+        </div>
+    </body>
+</html>
