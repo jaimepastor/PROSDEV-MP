@@ -55,6 +55,17 @@ exports.get = function(id){
   })
 }
 
+exports.getAll = function(){
+    return new Promise(function(resolve, reject){
+      User.find().then((users)=>{
+        resolve(users)
+      }, (err)=>{
+        reject(err)
+      })
+    })
+  }
+
+
 exports.getUser = function(email){
     return new Promise(function(resolve, reject){
       User.findOne({email:email}).then((user)=>{

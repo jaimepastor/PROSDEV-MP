@@ -156,6 +156,17 @@
     align-self: left;
 }
 
+.user{
+    max-width: 200px;
+    min-width: 200px;
+    max-height: 80px;
+    min-height: 80px;
+    display: block;
+    margin: 5px;
+    background-color: #373737;
+    align-self: left;
+}
+
 .search-container{
     width: 60%;
     margin: auto;
@@ -201,6 +212,32 @@
 .search-results,.product-title,.release-date{
     font-family: ralewayregular;
     text-align: center; 
+}
+
+.search-results, .user-name, .user-region{
+    text-align: left;
+}
+
+.user-name{
+    color: #FFF;
+    font-size: 20px;
+    margin: 10px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-family: ralewaysemibold;
+}
+
+.user-name a{
+    text-decoration: none;
+    color: #FFF;
+}
+
+.user-region{
+    color: #fd8f4b;
+    font-size: 20px;
+    margin: 10px;
+    margin-top: 0px;
+    font-family: ralewayregular;
 }
 
 #search-results-label{

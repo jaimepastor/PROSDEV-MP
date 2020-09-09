@@ -20,6 +20,7 @@
                     <div class="search-container">
                         <select class="search-type">
                             <option>Games</option>
+                            <option>Users</option>
                         </select>
                         <input type="text" class="search-bar" placeholder="Search..." value="">
                         <a class="search-button-click" href=""><div class="search-button"></div></a>
@@ -67,20 +68,34 @@
             <script>
                 function updateList(){
                     var searchTerm = $(".search-bar").val().toLowerCase();
+                    var searchType = $(".search-type").val()
                     $(".search-results").empty();
                     $("#search-results-label").css('visibility', 'visible');
-                    {{#each games}}
-                        if(searchTerm != "" && "{{title}}".toLowerCase().includes(searchTerm)){
-                           $(".search-results").append('<div class="product">' +
-                                                                '<a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>' +
-                                                                '<div class="details">' +
-                                                                    '<div class="product-title">{{title}}</div>' +
-                                                                    '<div class="release-date">Released{{release}}</div>' +
-                                                                    '<a href="/game/vg/{{_id}}""><div class="rent-button">RENT</div></a>' +
-                                                                '</div>' +
-                                                            '</div>').hide().show('fast');
-                        }
-                    {{/each}}
+                    if(searchType === "Games"){
+                        {{#each games}}
+                            if(searchTerm != "" && "{{title}}".toLowerCase().includes(searchTerm)){
+                               $(".search-results").append('<div class="product">' +
+                                                                    '<a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>' +
+                                                                    '<div class="details">' +
+                                                                        '<div class="product-title">{{title}}</div>' +
+                                                                        '<div class="release-date">Released{{release}}</div>' +
+                                                                        '<a href="/game/vg/{{_id}}""><div class="rent-button">RENT</div></a>' +
+                                                                    '</div>' +
+                                                                '</div>').hide().show('fast');
+                            }
+                        {{/each}}
+                    }
+                    else if(searchType === "Users"){
+                        {{#each users}}
+                            if(searchTerm != "" && ("{{firstName}}".toLowerCase().includes(searchTerm) || "{{lastName}}".toLowerCase().includes(searchTerm))){
+                                var fullName = '{{firstName}} {{lastName}}'
+                                $(".search-results").append('<div class="user">' +
+                                                                '<div class="user-name"><a href="/user/pf/{{email}}">' + fullName + '</a></div>' +
+                                                                '<div class="user-region">{{region}}</div>' +
+                                                            '</div>')
+                            }
+                        {{/each}}
+                    }
                     if(!$(".search-results").children().length){
                         $(".search-results").append('<div class = "noresult"> No results available. </div>').hide().show('fast');
                     }

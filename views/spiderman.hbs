@@ -93,7 +93,7 @@
                     <div class="details_lower">
                         <div class="details">
                             <span id="release-label"> Owner: </span>
-                            <span id="release" name="user">{{user}}</span>
+                            <span id="release" name="user"><a href="/user/pf/{{user}}">{{user}}</a></span>
                         </div>
                         <div class="details">
                             <span id="release-label"> Region: </span>
@@ -157,7 +157,7 @@
                         if(postID == '{{postID}}'){
                             $(".review-container").append('<div class="indiv-review">' +
                                                                     '<div class="review-content">{{review}}</div>'+
-                                                                    '<div class="review-author">by {{reviewerID}}</div>'+
+                                                                    '<div class="review-author"><a href="/user/pf/{{reviewerID}}">by {{reviewerID}}</a></div>'+
                                                             '</div>').hide().show('fast')
                         }
                     {{/each}}

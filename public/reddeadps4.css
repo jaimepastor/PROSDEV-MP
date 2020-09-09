@@ -442,6 +442,16 @@ body{
         cursor: pointer;
     }
 
+.review-author a{
+    text-decoration: none;
+    color: #FFF;
+}
+
+.details a{
+    text-decoration: none;
+    color: #FFF;
+}
+
 /*SCROLLBARS*/
 *{
   scrollbar-width: thin;
