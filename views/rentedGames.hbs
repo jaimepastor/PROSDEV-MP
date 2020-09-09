@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/rentedGames.css">
+        <script src="/jQuery.js"></script>
+        <meta charset="UTF-8">
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    </head>
+    
+    <body>
+        <div class="dashboard-container">
+            <!--NAVBAR-->
+            <div id="nav"></div>
+            <script>
+                $.get("/nav.html", function(data){
+                    $("#nav").replaceWith(data).stop();
+                });
+            </script>
+            <!--START-->
+            <h1 id="title"> Rented Listings</h1>         
+            
+        <div class="post-container">
+            {{!-- {{#each games}} --}}
+                <div class="fix" id="post-item">
+                    <div class="indiv_listing">
+                        <div class="product-image-container">
+                        <img class="product-image" src="{{link}}">
+                    </div>
+                        <div class="details_lower" id= "details_left">
+                            <div class="details">
+                                <span id="release-label"> {{title}} </span>
+                                
+                            </div>
+                            <div class="details">
+                                <span id="release-label"> {{platform}} - {{genre}}</span>
+                            </div>
+                            <div class="details">
+                                <span id="release-label"> Released: </span>
+                                <span id="release" name="region">{{release}}</span>
+                            </div>
+                           
+                        </div>
+                        <div class="details_lower">
+                            <div class="details">
+                                <span id="release-label"> Rented By: </span>
+                                <span id="release">{{name}}</span>
+                            </div>
+                            <div class="details">
+                                <span id="release-label"> Email: </span>
+                                <span id="release">{{email}}</span>
+                            </div>
+                            <div class="details">
+                                <span id="release-label"> Date Rented: </span>
+                                <span id="release">{{startDate}} - {{endDate}}</span>
+                            </div>
+                            <div class="details">
+                                <span id="release-label"> Duration: </span>
+                                <span id="release">{{duration}} Days</span>
+                            </div>
+                            <div class="details">
+                                <span id="release-label"> Total Price: </span>
+                                <span id="release">{{total}}</span>
+                            </div>
+                            <div class = "status-group">
+                                <div class = "status-label">Status:</div>
+                                    <select id = "status-dropdown" class="dropdown-field" name="status">
+                                        <option value= "Available">Available</option>
+                                        <option value = "Rented" selected = "selected">Rented</option>
+                                    </select>
+                            </div>
+                            
+                      
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            {{!-- {{/each}} --}}
+        </div>
+    
+    </body>
+</html>
+
+
+
+
