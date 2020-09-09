@@ -89,18 +89,15 @@ router.get("/rented-games", function(req, res){
     
     currUser = req.session.email
     User.getUser(currUser).then((newUser)=>{
-//        console.log(newUser)
         Post.getAll().then(async function(posts) {
-            let rentedGames = []
-            
+            let rentedGames = []   
             for (let i in posts) {
                 if(posts[i].status == "Rented"){
                     const game = await Game.getTitle(posts[i].title)
-                    
-                    History.get(posts[i]._id).then(async function(history){
-                        const user = await User.getUser(history.user)
-                        var date = new Date(history.rentDate)
-                        date.setDate(history.rentDate.getDate() + history.duration)
+                    const history = await History.get(posts[i]._id)
+                    const user = await User.getUser(history.user)
+                            var date = new Date(history.rentDate)
+                            date.setDate(history.rentDate.getDate() + history.duration)
                             const rentedGame = {
                                 title : posts[i].title,
                                 platform : game.platform,
@@ -117,13 +114,10 @@ router.get("/rented-games", function(req, res){
                                 returned: history.returned
                             }
                             rentedGames.push(rentedGame)
-                        
-                    })
+                      
                     }
                 
             }
-            console.log("rentedGmes")
-            console.log(rentedGames)
             res.render("rentedGames.hbs", {rentedGames})
           })
 })
