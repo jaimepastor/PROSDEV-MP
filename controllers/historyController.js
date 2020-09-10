@@ -121,6 +121,41 @@ router.get("/rented-games", function(req, res){
             res.render("rentedGames.hbs", {rentedGames})
           })
 })
-
 })
+router.get("/return-games", function(req, res){
+    History.getAll().then(async function(history) {
+        let gamesOnHand = []
+        
+        for (let i in history) {
+          if(history[i].user == req.session.email && history[i].returned == false){
+            const postingID = history[i].postingID
+            const post = await Post.get(postingID)
+            const game = await Game.getTitle(post.title)
+            var date = new Date(history[i].rentDate)
+            date.setDate(history[i].rentDate.getDate() + history[i].duration)
+            const historyRecord = {
+              postingID : postingID, 
+              title : game.title,
+              platform : game.platform,
+              genre : game.genre,
+              release : game.release,
+              link : game.link,
+              owner : post.user,
+              startDate : history[i].rentDate,
+              endDate: date,
+              duration : history[i].duration,
+              price : post.price,
+              total: post.price * history[i].duration,
+              returned: history[i].returned
+            }
+      
+            gamesOnHand.push(historyRecord)
+          }
+        }
+    
+        res.render("returnGames.hbs", {gamesOnHand})
+      })
+})
+
+
 module.exports = router

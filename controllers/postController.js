@@ -3,6 +3,7 @@ const router = express.Router()
 const Post = require("../models/post")
 const User = require("../models/user")
 const Game = require("../models/game")
+const History = require("../models/history")
 const bodyparser = require("body-parser")
 
 const app = express()
@@ -153,8 +154,41 @@ router.post("/edit/edit-post", function(req, res){
     })
 })
 
-router.get("/return-games", function(req, res){
-    res.render("returnGames.hbs")
+router.post("/return-game", function(req, res){
+    let id = req.body.id
+    console.log(id)
+    User.getUser(req.session.email).then((user)=>{
+        History.get(id).then((history)=>{
+            const his = {
+                user: history.user,
+                postingID: history.postingID,
+                rentDate: history.rentDate,
+                duration: history.duration,
+                returned: true
+            }
+            History.returnGame(history.postingID, history.user, his).then((history)=>{
+                console.log("hi")
+                console.log(history)
+                Post.get(id).then((post)=>{
+                    const temp ={
+                        title : post.title,
+                        user : post.user,
+                        price : post.price,
+                        status : "Returned",
+                        region : post.region,
+                        description : post.description
+                    }
+                    Post.edit(id, temp).then((post)=>{
+                        res.redirect("/history/return-games")
+                    }, (error)=>{
+                        res.sendFile(error)
+                    })
+                })
+            })
+            
+        })
+   
+})
 })
 
 module.exports = router

@@ -39,4 +39,14 @@ exports.get = function(postID){
     })
 }
 
+exports.returnGame = function(postID, user, history){
+    return new Promise(function(resolve, reject){
+        History.findOneAndUpdate({postingID:postID, user: user, returned: false}, history).then((history)=>{
+            resolve(history)
+        }, (err)=>{
+            reject(err)
+        })
+    })
+}
+
 

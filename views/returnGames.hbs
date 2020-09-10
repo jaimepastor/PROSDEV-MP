@@ -22,7 +22,7 @@
             <h1 id="title"> Games On-Hand</h1>         
             
         <div class="post-container">
-            {{!-- {{#each games}} --}}
+            {{#each gamesOnHand}}
                 <div class="fix" id="post-item">
                     <div class="indiv_listing">
                         <div class="product-image-container">
@@ -62,8 +62,11 @@
                                 <span id="release-label"> Total Price: </span>
                                 <span id="release">{{total}}</span>
                             </div>
-                         
-                            <button class ="return-button"><div>RETURN GAME</div></button>
+                            <form action="/post/return-game" method="post">
+                                <input type="hidden" id="hiddenPostID" value= "{{postingID}}" name="id">
+                                <button type="submit" class ="return-button"><div>RETURN GAME</div></button>
+                            </form>
+                            
                             
                       
                         </div>
@@ -71,7 +74,7 @@
                         
                     </div>
                 </div>
-            {{!-- {{/each}} --}}
+            {{/each}}
         </div>
     
     </body>
