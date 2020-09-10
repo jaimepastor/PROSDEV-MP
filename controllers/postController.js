@@ -153,4 +153,8 @@ router.post("/edit/edit-post", function(req, res){
     })
 })
 
+router.get("/return-games", function(req, res){
+    res.render("returnGames.hbs")
+})
+
 module.exports = router
