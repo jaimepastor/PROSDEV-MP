@@ -158,17 +158,15 @@ router.post("/return-game", function(req, res){
     let id = req.body.id
     console.log(id)
     User.getUser(req.session.email).then((user)=>{
-        History.get(id).then((history)=>{
-            const his = {
-                user: history.user,
-                postingID: history.postingID,
-                rentDate: history.rentDate,
-                duration: history.duration,
-                returned: true
-            }
-            History.returnGame(history.postingID, history.user, his).then((history)=>{
-                console.log("hi")
-                console.log(history)
+        // History.get(id).then((history)=>{
+        //     const his = {
+        //         user: history.user,
+        //         postingID: history.postingID,
+        //         rentDate: history.rentDate,
+        //         duration: history.duration,
+        //         returned: true
+        //     }
+            // History.returnGame(history.postingID, history.user, his).then((history)=>{
                 Post.get(id).then((post)=>{
                     const temp ={
                         title : post.title,
@@ -183,8 +181,8 @@ router.post("/return-game", function(req, res){
                     }, (error)=>{
                         res.sendFile(error)
                     })
-                })
-            })
+                // })
+            // })
             
         })
    
