@@ -38,6 +38,10 @@
                                 <span id="release-label"> Released: </span>
                                 <span id="release" name="region">{{release}}</span>
                             </div>
+                            <div class="details">
+                                <span id="release-label"> Status: </span>
+                                <span id="release" name="status">{{status}}</span>
+                            </div>
                            
                         </div>
                         <div class="details_lower">
@@ -62,12 +66,7 @@
                                 <span id="release">{{total}}</span>
                             </div>
                             <div class = "status-group">
-                                <div class = "status-label">Status:</div>
-                                    <select id = "status-dropdown" class="dropdown-field" name="status">
-                                        <option value= "Available">Available</option>
-                                        <option value= "Available">Returned</option>
-                                        <option value = "Rented" selected = "selected">Rented</option>
-                                    </select>
+                                    <a href="/post/editStatus/{{postingID}}"><div>EDIT STATUS</div></a>
                             </div>
                             
                       

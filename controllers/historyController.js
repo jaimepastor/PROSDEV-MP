@@ -94,6 +94,7 @@ router.get("/rented-games", function(req, res){
             let rentedGames = []   
             for (let i in posts) {
                 if(posts[i].status == "Rented" || posts[i].status == "Returned"){
+                    if(posts[i].user == currUser){
                     const game = await Game.getTitle(posts[i].title)
                     const history = await History.get(posts[i]._id)
                     const user = await User.getUser(history.user)
@@ -101,6 +102,7 @@ router.get("/rented-games", function(req, res){
                             date.setDate(history.rentDate.getDate() + history.duration)
                             const rentedGame = {
                                 title : posts[i].title,
+                                postingID: posts[i]._id,
                                 platform : game.platform,
                                 genre : game.genre,
                                 release : game.release,
@@ -112,10 +114,11 @@ router.get("/rented-games", function(req, res){
                                 duration : history.duration,
                                 price : posts[i].price,
                                 total: posts[i].price * history.duration,
-                                returned: history.returned
+                                returned: history.returned,
+                                status: posts[i].status
                             }
                             rentedGames.push(rentedGame)
-                      
+                        }
                     }
                 
             }

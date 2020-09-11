@@ -116,7 +116,59 @@ router.get("/edit/:id", function(req,res){
     })
 })
 
+router.get("/editStatus/:id", function(req,res){
+    var errors = req.session.errors
+    var savedinput = req.session.savedinput
+    req.session.errors = null
+    req.session.savedinput = null
+    Post.get(req.params.id).then((post)=>{
+        User.getUser(req.session.email).then((user)=>{
+            res.render("editstatus.hbs", {
+                post, user, errors, savedinput
+            })
+        })
+    })
+})
+
 router.post("/edit/edit-post", function(req, res){
+    User.getUser(req.session.email).then((user)=>{
+        var status = req.body.status
+        var postID = req.body.id
+        console.log(user.email)
+        
+        var post = {
+            title : req.body.title,
+            user : user.email,
+            price : req.body.price,
+            status : status,
+            region : user.region,
+            description : req.body.description
+        }
+        
+         if(listingValidation(post)){
+            Post.edit(postID, post).then((post)=>{
+                res.redirect("/user/profile")
+            }, (error)=>{
+                res.sendFile(error)
+            })
+        }
+        else{
+            req.session.errors = []
+            if(post.price < 0 || post.price > 10000)
+                req.session.errors.push({"container-id": "price","message": "Invalid price value, must be between 0 and 10000"})
+            if(post.description == '')
+                req.session.errors.push({"container-id": "description","message": "Condition must be filled"})
+            
+            req.session.savedinput = [{"container-id": "price", "content": post.price}, 
+                                      {"container-id": "description", "content": post.description}]
+            if(req.body.title)
+                req.session.savedinput.push({"container-id": "title", "content": post.title})
+            res.redirect(postID)
+        }
+    })
+})
+
+router.post("/edit/edit-status", function(req, res){
     User.getUser(req.session.email).then((user)=>{
         var status = req.body.status
         var postID = req.body.id
