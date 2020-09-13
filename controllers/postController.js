@@ -183,12 +183,25 @@ router.post("/edit/edit-status", function(req, res){
             description : req.body.description
         }
         
+        console.log(post)
+        
          if(listingValidation(post)){
-            Post.edit(postID, post).then((post)=>{
-                res.redirect("/user/profile")
-            }, (error)=>{
-                res.sendFile(error)
-            })
+             if(status == "Returned"){
+                History.return(postID).then(()=>{
+                    Post.edit(postID, post).then((post)=>{
+                        res.redirect("/user/profile")
+                    }, (error)=>{
+                        res.sendFile(error)
+                    })
+                })
+             }
+             else{
+                Post.edit(postID, post).then((post)=>{
+                    res.redirect("/user/profile")
+                }, (error)=>{
+                    res.sendFile(error)
+                })
+             }
         }
         else{
             req.session.errors = []
