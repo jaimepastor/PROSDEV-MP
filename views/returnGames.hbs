@@ -24,12 +24,12 @@
             </div>
         </div>
         <div class="modal-footer">
-            <form id = "reviewForm" method="POST" action="/review/new-review">
+            <form id = "reviewForm" method="POST" action="/review/new-review-return">
                 <input type = "text" id = "review_text" class = "review_textbox" placeholder="Leave a review!" name="review">
-                <button id="reviewSubmit" class="rent_button">SUBMIT</button><button class="cancel">CANCEL</button>
+                <button id="reviewSubmit" class="rent_button">SUBMIT</button>
                 <input type="hidden" id="hiddenPostID" value="" name="postID">
             </form>
-            
+            <button class="cancel">CANCEL</button>
         </div>
         </div>
 
@@ -88,10 +88,10 @@
                                 <span id="release-label"> Total Price: </span>
                                 <span id="release">{{total}}</span>
                             </div>
-                            <form action="/post/return-game" method="post">
+                            {{!-- <form action="/post/return-game" method="post"> --}}
                                 <input type="hidden" id="hiddenPostID" value= "{{postingID}}" name="id">
-                                <button type="submit" class ="return-button"><div>RETURN GAME</div></button>
-                            </form>
+                                <button type="submit" class ="return-button" name="{{postingID}}"><div>RETURN GAME</div></button>
+                            {{!-- </form> --}}
                             
                             
                       
@@ -108,8 +108,11 @@
             $(document).ready(function(){
 
                 $(".return-button").click(function(){
+                    let postID = $(this).attr("name")
+                    document.getElementById("hiddenPostID").value = postID
                     modal.style.display = "block";
                 })
+
             })
 
             var span = document.getElementsByClassName("close")[0];
