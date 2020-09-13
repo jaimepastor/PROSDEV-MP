@@ -28,6 +28,7 @@ router.get('/history', async function(req, res){
           var date = new Date(history[i].rentDate)
           date.setDate(history[i].rentDate.getDate() + history[i].duration)
           const historyRecord = {
+            postingID : postingID,
             title : game.title,
             platform : game.platform,
             genre : game.genre,
@@ -92,7 +93,8 @@ router.get("/rented-games", function(req, res){
         Post.getAll().then(async function(posts) {
             let rentedGames = []   
             for (let i in posts) {
-                if(posts[i].status == "Rented"){
+                if(posts[i].status == "Rented" || posts[i].status == "Returned"){
+                    if(posts[i].user == currUser){
                     const game = await Game.getTitle(posts[i].title)
                     const history = await History.get(posts[i]._id)
                     const user = await User.getUser(history.user)
@@ -100,6 +102,7 @@ router.get("/rented-games", function(req, res){
                             date.setDate(history.rentDate.getDate() + history.duration)
                             const rentedGame = {
                                 title : posts[i].title,
+                                postingID: posts[i]._id,
                                 platform : game.platform,
                                 genre : game.genre,
                                 release : game.release,
@@ -111,16 +114,54 @@ router.get("/rented-games", function(req, res){
                                 duration : history.duration,
                                 price : posts[i].price,
                                 total: posts[i].price * history.duration,
-                                returned: history.returned
+                                returned: history.returned,
+                                status: posts[i].status
                             }
                             rentedGames.push(rentedGame)
-                      
+                        }
                     }
                 
             }
             res.render("rentedGames.hbs", {rentedGames})
           })
 })
-
 })
+router.get("/return-games", function(req, res){
+    History.getAll().then(async function(history) {
+        let gamesOnHand = []
+        
+        for (let i in history) {
+          if(history[i].user == req.session.email && history[i].returned == false){
+            const postingID = history[i].postingID
+            const post = await Post.get(postingID)
+            const game = await Game.getTitle(post.title)
+            var date = new Date(history[i].rentDate)
+            date.setDate(history[i].rentDate.getDate() + history[i].duration)
+            if(post.status == "Rented"){
+                const historyRecord = {
+                    postingID : postingID, 
+                    title : game.title,
+                    platform : game.platform,
+                    genre : game.genre,
+                    release : game.release,
+                    link : game.link,
+                    owner : post.user,
+                    startDate : history[i].rentDate,
+                    endDate: date,
+                    duration : history[i].duration,
+                    price : post.price,
+                    total: post.price * history[i].duration,
+                    returned: history[i].returned
+                  }
+            
+                  gamesOnHand.push(historyRecord)
+            }
+          }
+        }
+    
+        res.render("returnGames.hbs", {gamesOnHand})
+      })
+})
+
+
 module.exports = router

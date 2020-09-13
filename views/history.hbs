@@ -63,8 +63,9 @@
                             {{#if returned}}
                          
                          {{else}}
-                            <form action ="" method = "">
-                            <button type = "submit" class ="return-button"><div>RETURN GAME</div></button>
+                            <form action="/post/return-game" method="post">
+                                <input type="hidden" id="hiddenPostID" value= "{{postingID}}" name="id">
+                                <button type="submit" class ="return-button"><div>RETURN GAME</div></button>
                             </form>
                         {{/if}}
                         </div>

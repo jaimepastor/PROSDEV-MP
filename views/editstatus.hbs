@@ -19,8 +19,10 @@
                 <div class="checkout-header">
                     <span class="checkout-header-label">Edit Listing</span>
                 </div>
-                        <form action="edit-post" method="post">
+                        <form action="/post/edit/edit-status" method="post">
                             <input type="hidden" name="id" value="{{post._id}}">
+                            <input type="hidden" name="price" value="{{post.price}}">
+                            <input type="hidden" name="description" value="{{post.description}}">
                             <div class="left-column">
                                 <div class="input-section">
                                     <div class="input-field-container" id="titleError">
@@ -32,14 +34,13 @@
 
                                 <div class="input-section">
                                         <div class="item-label">Price</div>
-                                        <span class="item-label">Php </span>
-                                        <div class="input-field-container" id="priceError"><input class="price-field" type="number" name="price" min="1" value="{{post.price}}"></div>
+                                        <span class="item-label">Php {{post.price}}</span>
                                         <span class="item-label"> /day</span>
                                 </div>
                                 
                                 <div class="input-section">
                                     <div class="item-label">Condition</div>
-                                    <div class="input-field-container" id="descriptionError"><textarea class="description-field" name="description">{{post.description}}</textarea></div>
+                                    <div class="input-field-container" id="descriptionError"><span class="description-field">{{post.description}}</span></div>
                                 </div>
                             </div>
                             
@@ -60,7 +61,7 @@
                                 
                                 <div class="input-section">
                                     <div class="item-label">Region</div>
-                                    <div class="item-display">{{user.region}}</div>
+                                    <div class="item-display" name="region">{{user.region}}</div>
                                 </div>
                                 
                                 <div class="input-section">
