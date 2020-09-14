@@ -189,6 +189,7 @@ router.post("/edit/edit-status", function(req, res){
              if(status == "Returned"){
                 History.return(postID).then(()=>{
                     Post.edit(postID, post).then((post)=>{
+                        console.log("hehe"+post)
                         res.redirect("/user/profile")
                     }, (error)=>{
                         res.sendFile(error)
