@@ -4,12 +4,14 @@
   "description": "In partial fulfillment of the course PROSDEV or Professional Software Development.\r Group members:\r 1. Santiago Alvarez\r 2. Justin Chua\r 3. Melody Go\r 4. Rebecalyn Lao\r 5. John Legaspi\r 6. Jaime Pastor",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "jest --color"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jaimepastor/PROSDEV-MP.git"
   },
+  "engines": {"node": "12.x"},
   "author": "",
   "license": "ISC",
   "bugs": {
