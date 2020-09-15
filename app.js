@@ -8,8 +8,10 @@ const app = express()
 
 mongoose.Promise = global.Promise;
 // mongoose.connect("mongodb+srv://legaspij93:sapphire5@webapde-mp3-xcsjd.mongodb.net/test?retryWrites=true&w=majority", {
-//mongoose.connect("mongodb://localhost:27017/prosdev", {
-mongoose.connect("mongodb://localhost:27017/gameshare", {
+//, {
+MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/gameshare" 
+// MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/prosdev" 
+mongoose.connect(MONGO_URI, {
     useNewUrlParser: true
 })
 
