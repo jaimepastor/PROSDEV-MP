@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200914 18:04:49.132" rpa="false">
+<suite id="s1" name="Valid Addgame" source="D:\git\PROSDEV-MP\automation_tests\addgames_tests\valid_addgame.robot">
+<test id="s1-t1" name="Valid Add Game">
+<kw name="Open Browser To Add Game Page" library="resourcegame">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${ADDGAME URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200914 18:04:49.452" level="INFO">Opening browser 'Firefox' to base url 'http://localhost:3000/game/new-game'.</msg>
+<msg timestamp="20200914 18:04:49.455" level="INFO">Firefox driver log is always forced to to: D:\git\PROSDEV-MP\geckodriver-4.log</msg>
+<status status="PASS" starttime="20200914 18:04:49.452" endtime="20200914 18:04:57.375"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200914 18:04:57.375" endtime="20200914 18:04:57.649"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20200914 18:04:57.649" endtime="20200914 18:04:57.650"></status>
+</kw>
+<status status="PASS" starttime="20200914 18:04:49.451" endtime="20200914 18:04:57.650"></status>
+</kw>
+<kw name="Input Game Title" library="resourcegame">
+<arguments>
+<arg>Among Us</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>title</arg>
+<arg>${title}</arg>
+</arguments>
+<msg timestamp="20200914 18:04:57.651" level="INFO">Typing text 'Among Us' into text field 'title'.</msg>
+<status status="PASS" starttime="20200914 18:04:57.651" endtime="20200914 18:04:57.709"></status>
+</kw>
+<status status="PASS" starttime="20200914 18:04:57.651" endtime="20200914 18:04:57.709"></status>
+</kw>
+<kw name="Input Game Link" library="resourcegame">
+<arguments>
+<arg>https://steamcdn-a.akamaihd.net/steam/apps/945360/header.jpg?t=1598556351</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>link</arg>
+<arg>${link}</arg>
+</arguments>
+<msg timestamp="20200914 18:04:57.716" level="INFO">Typing text 'https://steamcdn-a.akamaihd.net/steam/apps/945360/header.jpg?t=1598556351' into text field 'link'.</msg>
+<status status="PASS" starttime="20200914 18:04:57.716" endtime="20200914 18:04:57.849"></status>
+</kw>
+<status status="PASS" starttime="20200914 18:04:57.715" endtime="20200914 18:04:57.850"></status>
+</kw>
+<kw name="Input Game Date" library="resourcegame">
+<arguments>
+<arg>2020-07-06 00:00:00.000Z</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>release</arg>
+<arg>${date}</arg>
+</arguments>
+<msg timestamp="20200914 18:04:57.852" level="INFO">Typing text '2020-07-06 00:00:00.000Z' into text field 'release'.</msg>
+<status status="PASS" starttime="20200914 18:04:57.851" endtime="20200914 18:04:57.893"></status>
+</kw>
+<status status="PASS" starttime="20200914 18:04:57.851" endtime="20200914 18:04:57.893"></status>
+</kw>
+<kw name="Select Genre" library="resourcegame">
+<arguments>
+<arg>Shooter</arg>
+</arguments>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>genre</arg>
+<arg>${genre}</arg>
+</arguments>
+<msg timestamp="20200914 18:04:57.894" level="INFO">Selecting options from selection list 'genre' by label Shooter.</msg>
+<status status="PASS" starttime="20200914 18:04:57.894" endtime="20200914 18:04:58.162"></status>
+</kw>
+<status status="PASS" starttime="20200914 18:04:57.893" endtime="20200914 18:04:58.163"></status>
+</kw>
+<kw name="Select Platform" library="resourcegame">
+<arguments>
+<arg>PS4</arg>
+</arguments>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>platform</arg>
+<arg>${platform}</arg>
+</arguments>
+<msg timestamp="20200914 18:04:58.164" level="INFO">Selecting options from selection list 'platform' by label PS4.</msg>
+<status status="PASS" starttime="20200914 18:04:58.164" endtime="20200914 18:04:58.408"></status>
+</kw>
+<status status="PASS" starttime="20200914 18:04:58.163" endtime="20200914 18:04:58.408"></status>
+</kw>
+<kw name="Select Rating" library="resourcegame">
+<arguments>
+<arg>Adults</arg>
+</arguments>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>rating</arg>
+<arg>${rating}</arg>
+</arguments>
+<msg timestamp="20200914 18:04:58.409" level="INFO">Selecting options from selection list 'rating' by label Adults.</msg>
+<status status="PASS" starttime="20200914 18:04:58.409" endtime="20200914 18:04:58.646"></status>
+</kw>
+<status status="PASS" starttime="20200914 18:04:58.409" endtime="20200914 18:04:58.647"></status>
+</kw>
+<kw name="CLick Add Game" library="resourcegame">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>add_gameBtn</arg>
+</arguments>
+<msg timestamp="20200914 18:04:58.648" level="INFO">Clicking button 'add_gameBtn'.</msg>
+<status status="PASS" starttime="20200914 18:04:58.648" endtime="20200914 18:04:59.146"></status>
+</kw>
+<status status="PASS" starttime="20200914 18:04:58.647" endtime="20200914 18:04:59.147"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200914 18:04:59.147" endtime="20200914 18:05:00.040"></status>
+</kw>
+<status status="PASS" starttime="20200914 18:04:49.451" endtime="20200914 18:05:00.041" critical="yes"></status>
+</test>
+<doc>A test suite with a single test for valid add game.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="PASS" starttime="20200914 18:04:49.136" endtime="20200914 18:05:00.042"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Valid Addgame">Valid Addgame</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
