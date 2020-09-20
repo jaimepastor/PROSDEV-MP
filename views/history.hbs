@@ -15,7 +15,7 @@
         <div class="modal-content">
         <div class="modal-header">
             <span class="close">&times;</span>
-            <h2> Thank you for renting (Game)!</h2>
+            <h2> Thank you for renting <span id="modalGame"></span>!</h2>
             <h4> How was your experience? Leave us a Review!</h4>
         </div>
         <div class="modal-body">
@@ -91,7 +91,8 @@
                             {{#if returned}}
                          
                          {{else}}
-                           <input type="hidden" id="hiddenPostID" value= "{{postingID}}" name="id">
+                            <input type="hidden" id="hiddenPostID" value= "{{postingID}}" name="id">
+                            <input type="hidden" id="hiddenGame" value="{{title}}">
                             <button type="submit" class ="return-button" name="{{postingID}}"><div>RETURN GAME</div></button>
                         {{/if}}
                         </div>
@@ -116,6 +117,9 @@
                 $(".return-button").click(function(){
                     let postID = $(this).attr("name")
                     document.getElementById("hiddenPostID2").value = postID
+                    var gameName = document.getElementById("hiddenGame").value
+                    var modalTitle = document.getElementById("modalGame")
+                    modalTitle.innerHTML = gameName
                     modal.style.display = "block";
                 })
 
