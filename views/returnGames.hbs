@@ -9,6 +9,34 @@
     
     <body>
 
+        <div id="reviewModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2> Thank you for renting <span id="modalGame"></span>!</h2>
+            <h4> How was your experience? Leave us a Review!</h4>
+        </div>
+        <div class="modal-body">
+            <div class ="review-container" id="reviewCont">
+             
+            </div>
+        </div>
+        <div class="modal-footer">
+            <form id = "reviewForm" method="POST" action="/review/new-review-return">
+              <div>
+                <input type = "text" id = "review_text" class = "review_textbox" placeholder="Leave a review!" name="review">
+                <button id="reviewSubmit" class="rent_button">SUBMIT</button>
+                <input type="hidden" id="hiddenPostID" value="" name="postID">
+            </form>
+            <button class="cancel">CANCEL</button>
+            </div>
+        </div>
+        </div>
+
+        </div>
+
 
         <div class="dashboard-container">
             <!--NAVBAR-->
@@ -62,10 +90,11 @@
                                 <span id="release-label"> Total Price: </span>
                                 <span id="release">{{total}}</span>
                             </div>
-                            <form action="/post/return-game" method="post">
+                            {{!-- <form action="/post/return-game" method="post"> --}}
                                 <input type="hidden" id="hiddenPostID" value= "{{postingID}}" name="id">
-                                <button type="submit" class ="return-button"><div>RETURN GAME</div></button>
-                            </form>
+                                <input type="hidden" id="hiddenGame" value="{{title}}">
+                                <button type="submit" class ="return-button" name="{{postingID}}"><div>RETURN GAME</div></button>
+                            {{!-- </form> --}}
                             
                             
                       
@@ -77,5 +106,48 @@
             {{/each}}
         </div>
     
+    <script>
+            var modal = document.getElementById("reviewModal");
+            $(document).ready(function(){
+
+                $(".return-button").click(function(){
+                    let postID = $(this).attr("name")
+                    document.getElementById("hiddenPostID").value = postID
+                    var gameName = document.getElementById("hiddenGame").value
+                    var modalTitle = document.getElementById("modalGame")
+                    modalTitle.innerHTML = gameName
+                    modal.style.display = "block";
+                })
+
+                $(".cancel").click(function(){
+                    document.getElementById("reviewForm").submit()
+                })
+
+                $(".close").click(function(){
+                    document.getElementById("reviewForm").submit()
+                })
+            })
+
+            var span = document.getElementsByClassName("close")[0];
+            var cancel = document.getElementsByClassName("cancel")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                modal.style.display = "none";
+                
+                }
+                cancel.onclick = function() {
+                modal.style.display = "none";
+                
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                   
+                }
+                }
+        </script>
     </body>
 </html>
