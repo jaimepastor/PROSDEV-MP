@@ -24,11 +24,11 @@
             </div>
         </div>
         <div class="modal-footer">
-            <form id = "reviewForm" method="POST" action="/review/new-review-return">
+            <form id = "reviewForm" method="POST" action="/review/new-review-history">
               <div>
                 <input type = "text" id = "review_text" class = "review_textbox" placeholder="Leave a review!" name="review">
                 <button id="reviewSubmit" class="rent_button">SUBMIT</button>
-                <input type="hidden" id="hiddenPostID" value="" name="postID">
+                <input type="hidden" id="hiddenPostID2" value="" name="postID">
             </form>
             <button class="cancel">CANCEL</button>
             </div>
@@ -115,10 +115,17 @@
 
                 $(".return-button").click(function(){
                     let postID = $(this).attr("name")
-                    document.getElementById("hiddenPostID").value = postID
+                    document.getElementById("hiddenPostID2").value = postID
                     modal.style.display = "block";
                 })
 
+                $(".cancel").click(function(){
+                    document.getElementById("reviewForm").submit()
+                })
+
+                $(".close").click(function(){
+                    document.getElementById("reviewForm").submit()
+                })
             })
 
             var span = document.getElementsByClassName("close")[0];

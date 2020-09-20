@@ -137,7 +137,7 @@ router.get("/return-games", function(req, res){
             const game = await Game.getTitle(post.title)
             var date = new Date(history[i].rentDate)
             date.setDate(history[i].rentDate.getDate() + history[i].duration)
-            if(post.status == "Rented"){
+            if(history[i].returned == false){
                 const historyRecord = {
                     postingID : postingID, 
                     title : game.title,

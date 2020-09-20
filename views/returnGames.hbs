@@ -115,6 +115,13 @@
                     modal.style.display = "block";
                 })
 
+                $(".cancel").click(function(){
+                    document.getElementById("reviewForm").submit()
+                })
+
+                $(".close").click(function(){
+                    document.getElementById("reviewForm").submit()
+                })
             })
 
             var span = document.getElementsByClassName("close")[0];
