@@ -8,9 +8,9 @@ Library           SeleniumLibrary
 
 *** Variables ***
 ${SERVER}         localhost:3000
-${BROWSER}        Firefox
+${BROWSER}        Chrome
 ${DELAY}          0
-${VALID USER}     jstn@yahoo.com   
+${VALID USER}     reb@gmail.com 
 ${VALID PASSWORD}    12345678
 ${LOGIN URL}      http://${SERVER}/user/loginpage
 ${DASHBOARD URL}    http://${SERVER}/game/games
@@ -32,14 +32,14 @@ Go To Login Page
 
 Input Username
     [Arguments]    ${username}
-    Input Text    email_field    ${username}
+    Input Text    email    ${username}
 
 Input Password
     [Arguments]    ${password}
-    Input Text    password_field    ${password}
+    Input Text    password    ${password}
 
 Submit Credentials
-    Click Button    login_button
+    Click Button    Login
 
 Dashboard Page Should Be Open
     Location Should Be    ${DASHBOARD URL}

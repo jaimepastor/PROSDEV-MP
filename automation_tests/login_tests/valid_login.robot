@@ -8,8 +8,8 @@ Resource          resource.robot
 *** Test Cases ***
 Valid Login
     Open Browser To Login Page
-    Input Username    jstn@yahoo.com
+    Input Username    reb@gmail.com
     Input Password    12345678
     Submit Credentials
     Dashboard Page Should Be Open
-    [Teardown]    Close Browser
+    # [Teardown]    Close Browser

@@ -15,5 +15,4 @@ Valid Add Game
     Select Platform    PS4
     Select Rating    Adults
     CLick Add Game
-    Sleep 3s
-    [Teardown]    Close Browser
+   

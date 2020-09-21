@@ -44,14 +44,14 @@ Go To Login Page
 
 Input Username
     [Arguments]    ${username}
-    Input Text    email_field    ${username}
+    Input Text    email    ${username}
 
 Input Password
     [Arguments]    ${password}
-    Input Text    password_field    ${password}
+    Input Text    password   ${password}
 
 Submit Credentials
-    Click Button    login_button
+    Click Button    Login
 
 Dashboard Page Should Be Open
     Location Should Be    ${DASHBOARD URL}
@@ -71,5 +71,17 @@ Input Condition
     Input Text    description    ${description}
 
 Submit Credentials Upload
-    Click Button    upload_btn
+    Click Button    Upload
+
+Click Profile
+    Click Element    profile
+
+Profile Should be Open
+    Location Should Be    ${PROFILE URL}
+
+Click Listing
+    Click Element    add_listing_btn
+
+Listing Should be Open
+    Location Should Be    ${ADD LISTING URL}
 
