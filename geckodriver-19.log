@@ -1,0 +1,16 @@
+1600680571868	geckodriver	INFO	Listening on 127.0.0.1:53155
+1600680574948	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\JUSTIN~1\\AppData\\Local\\Temp\\rust_mozprofiledhl6ec"
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600680577212	Marionette	INFO	Listening on port 53163
+1600680577585	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new AbortError("The operation was aborted. ", (void 0), 689))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 343))
+JavaScript error: resource://gre/modules/DateTimePickerPanel.jsm, line 69: TypeError: this.dateTimePopupFrame.contentDocument is null
+1600680689879	Marionette	INFO	Stopped listening on port 53163
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+

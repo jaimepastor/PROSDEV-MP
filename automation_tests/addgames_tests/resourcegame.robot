@@ -34,6 +34,9 @@ Login Page Should Be Open
 
 Go To Login Page
     Go To    ${LOGIN URL}
+
+Go To Add Game Page
+    Go To    ${ADDGAME URL}
     
 
 Input Username
@@ -60,7 +63,8 @@ Input Game Link
 
 Input Game Date
     [Arguments]    ${date}
-    Input Text    release    ${date}
+    Click Element  xpath=/html/body/div/div[2]/form/div[1]/div[3]/div[2]/input
+    Send Keys    release    ${date}
 
 Select Genre
     [Arguments]    ${genre}
@@ -76,4 +80,8 @@ Select Platform
 
 CLick Add Game
     Click Button  add_gameBtn
+
+Sleep Time
+[Arguments]    ${time}
+Sleep ${time}
 

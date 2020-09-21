@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.5 on win32)" generated="20200815 12:43:14.810" rpa="false">
+<suite id="s1" name="Valid Login" source="D:\git\PROSDEV-MP\automation_tests\login_tests\valid_login.robot">
+<test id="s1-t1" name="Valid Login">
+<kw name="Open Browser To Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200815 12:43:15.126" level="INFO">Opening browser 'Firefox' to base url 'http://localhost:3000/user/loginpage'.</msg>
+<msg timestamp="20200815 12:43:15.127" level="INFO">Firefox driver log is always forced to to: D:\git\PROSDEV-MP\automation_tests\login_tests\geckodriver-4.log</msg>
+<status status="PASS" starttime="20200815 12:43:15.126" endtime="20200815 12:43:21.727"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200815 12:43:21.728" endtime="20200815 12:43:21.997"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20200815 12:43:21.997" endtime="20200815 12:43:21.998"></status>
+</kw>
+<status status="PASS" starttime="20200815 12:43:15.126" endtime="20200815 12:43:21.998"></status>
+</kw>
+<kw name="Input Username" library="resource">
+<arguments>
+<arg>jstn@yahoo.com</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email_field</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20200815 12:43:22.001" level="INFO">Typing text 'jstn@yahoo.com' into text field 'email_field'.</msg>
+<status status="PASS" starttime="20200815 12:43:22.000" endtime="20200815 12:43:22.073"></status>
+</kw>
+<status status="PASS" starttime="20200815 12:43:21.999" endtime="20200815 12:43:22.074"></status>
+</kw>
+<kw name="Input Password" library="resource">
+<arguments>
+<arg>12345678</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password_field</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200815 12:43:22.076" level="INFO">Typing text '12345678' into text field 'password_field'.</msg>
+<status status="PASS" starttime="20200815 12:43:22.075" endtime="20200815 12:43:22.162"></status>
+</kw>
+<status status="PASS" starttime="20200815 12:43:22.075" endtime="20200815 12:43:22.163"></status>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>login_button</arg>
+</arguments>
+<msg timestamp="20200815 12:43:22.165" level="INFO">Clicking button 'login_button'.</msg>
+<status status="PASS" starttime="20200815 12:43:22.165" endtime="20200815 12:43:23.477"></status>
+</kw>
+<status status="PASS" starttime="20200815 12:43:22.164" endtime="20200815 12:43:23.478"></status>
+</kw>
+<kw name="Dashboard Page Should Be Open" library="resource">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${DASHBOARD URL}</arg>
+</arguments>
+<msg timestamp="20200815 12:43:23.485" level="INFO">Current location is 'http://localhost:3000/game/games'.</msg>
+<status status="PASS" starttime="20200815 12:43:23.479" endtime="20200815 12:43:23.485"></status>
+</kw>
+<status status="PASS" starttime="20200815 12:43:23.478" endtime="20200815 12:43:23.485"></status>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200815 12:43:23.486" endtime="20200815 12:43:24.451"></status>
+</kw>
+<status status="PASS" starttime="20200815 12:43:15.124" endtime="20200815 12:43:24.451" critical="yes"></status>
+</test>
+<doc>A test suite with a single test for valid login.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="PASS" starttime="20200815 12:43:14.813" endtime="20200815 12:43:24.458"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Valid Login">Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
