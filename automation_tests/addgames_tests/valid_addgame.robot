@@ -10,10 +10,9 @@ Valid Add Game
     Open Browser To Add Game Page
     Input Game Title    Among Us  
     Input Game Link    https://steamcdn-a.akamaihd.net/steam/apps/945360/header.jpg?t=1598556351
-    Input Game Date  2020-07-06 00:00:00.000Z
+    Input Game Date    2020-07-08
     Select Genre    Shooter
     Select Platform    PS4
     Select Rating    Adults
     CLick Add Game
-    Sleep 3s
     [Teardown]    Close Browser

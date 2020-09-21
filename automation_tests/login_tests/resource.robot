@@ -43,3 +43,13 @@ Submit Credentials
 
 Dashboard Page Should Be Open
     Location Should Be    ${DASHBOARD URL}
+
+Input Game Title
+    [Arguments]    ${title}
+    Input Text    game_title    ${title}
+
+Input Game Link
+    [Arguments]    ${link}
+    Input Text    game_link    ${link}
+    
+
