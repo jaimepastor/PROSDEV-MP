@@ -141,6 +141,18 @@
                 
                 }
 
+                $("#reviewSubmit").click(function(event){
+                    event.preventDefault()
+                    if(!$("#review_text").val().trim()){
+                        alert("Please input valid review!");
+                    }
+                    else{
+                        document.getElementById("reviewForm").submit()
+                        alert("Review submitted!");
+                    }
+                    
+                })
+
                 // When the user clicks anywhere outside of the modal, close it
                 window.onclick = function(event) {
                 if (event.target == modal) {
