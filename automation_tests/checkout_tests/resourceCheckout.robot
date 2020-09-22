@@ -16,13 +16,40 @@ ${LOGIN URL}      http://${SERVER}/user/loginpage
 ${ADDGAME URL}      http://${SERVER}/game/new-game
 ${DASHBOARD URL}    http://${SERVER}/game/games
 ${ERROR URL}      http://${SERVER}/error.html
-${CART URL}    http://${SERVER}/cart
+${CART URL}    http://${SERVER}/cart/
 
 *** Keywords ***
 Open Browser To Login Page
     Open Browser    ${LOGIN URL}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
+
+Input Username
+    [Arguments]    ${username}
+    Input Text    email    ${username}
+
+Input Password
+    [Arguments]    ${password}
+    Input Text    password   ${password}
+
+Submit Credentials
+    Click Button    Login
+
+Dashboard Page Should Be Open
+    Location Should Be    ${DASHBOARD URL}
+
+
+# 
+
+Click Cart
+    Click Element       //*[contains(text(),'My Cart')]
+
+Cart Should be Open
+    Location Should Be    ${CART URL}
+
+CLick Checkout
+    Click Button  checkout_btn
+
 
 Open Browser To Add Game Page
     Open Browser    ${ADDGAME URL}    ${BROWSER}
@@ -45,7 +72,40 @@ Login Page Should Be Open
 Go To Login Page
     Go To    ${LOGIN URL}
 
-CLick Checkout
-    Click Button  checkout_btn
+Open Browser To Profile Page
+    Open Browser    ${PROFILE URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    ${DELAY}
+
+Open Browser To Add Listing Page
+    Open Browser    ${ADD LISTING URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    ${DELAY}
 
 
+
+# For Add Listings Credentials
+
+Select Title
+    [Arguments]   ${title}
+    select from list by label  title    ${title}
+
+Input Price
+    [Arguments]   ${price}
+    Input Text    price    ${price}
+
+Input Condition
+    [Arguments]   ${description}
+    Input Text    description    ${description}
+
+Submit Credentials Upload
+    Click Button    Upload
+
+
+
+
+Click Listing
+    Click Element    add_listing_btn
+
+Listing Should be Open
+    Location Should Be    ${ADD LISTING URL}

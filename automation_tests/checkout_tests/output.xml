@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.3 on win32)" generated="20200922 02:30:06.215" rpa="false">
+<suite id="s1" name="Valid Checkout" source="C:\Users\BECKY\Documents\03_GitHub\PROSDEV-MP\automation_tests\checkout_tests\valid_checkout.robot">
+<test id="s1-t1" name="Valid Checkout">
+<kw name="Open Browser To Login Page" library="resourceCheckout">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200922 02:30:06.506" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/user/loginpage'.</msg>
+<status status="PASS" starttime="20200922 02:30:06.506" endtime="20200922 02:30:10.067"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200922 02:30:10.068" endtime="20200922 02:30:12.206"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20200922 02:30:12.206" endtime="20200922 02:30:12.207"></status>
+</kw>
+<status status="PASS" starttime="20200922 02:30:06.506" endtime="20200922 02:30:12.207"></status>
+</kw>
+<kw name="Input Username" library="resourceCheckout">
+<arguments>
+<arg>reb@gmail.com</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>email</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20200922 02:30:12.209" level="INFO">Typing text 'reb@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20200922 02:30:12.208" endtime="20200922 02:30:12.341"></status>
+</kw>
+<status status="PASS" starttime="20200922 02:30:12.208" endtime="20200922 02:30:12.341"></status>
+</kw>
+<kw name="Input Password" library="resourceCheckout">
+<arguments>
+<arg>12345678</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200922 02:30:12.343" level="INFO">Typing text '12345678' into text field 'password'.</msg>
+<status status="PASS" starttime="20200922 02:30:12.342" endtime="20200922 02:30:12.464"></status>
+</kw>
+<status status="PASS" starttime="20200922 02:30:12.342" endtime="20200922 02:30:12.464"></status>
+</kw>
+<kw name="Submit Credentials" library="resourceCheckout">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>Login</arg>
+</arguments>
+<msg timestamp="20200922 02:30:12.465" level="INFO">Clicking button 'Login'.</msg>
+<status status="PASS" starttime="20200922 02:30:12.465" endtime="20200922 02:30:13.935"></status>
+</kw>
+<status status="PASS" starttime="20200922 02:30:12.465" endtime="20200922 02:30:13.936"></status>
+</kw>
+<kw name="Dashboard Page Should Be Open" library="resourceCheckout">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${DASHBOARD URL}</arg>
+</arguments>
+<msg timestamp="20200922 02:30:13.957" level="INFO">Current location is 'http://localhost:3000/game/games'.</msg>
+<status status="PASS" starttime="20200922 02:30:13.938" endtime="20200922 02:30:13.958"></status>
+</kw>
+<status status="PASS" starttime="20200922 02:30:13.937" endtime="20200922 02:30:13.958"></status>
+</kw>
+<kw name="Click Cart" library="resourceCheckout">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//*[contains(text(),'My Cart')]</arg>
+</arguments>
+<msg timestamp="20200922 02:30:13.963" level="INFO">Clicking element '//*[contains(text(),'My Cart')]'.</msg>
+<status status="PASS" starttime="20200922 02:30:13.962" endtime="20200922 02:30:14.109"></status>
+</kw>
+<status status="PASS" starttime="20200922 02:30:13.961" endtime="20200922 02:30:14.109"></status>
+</kw>
+<kw name="Cart Should be Open" library="resourceCheckout">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${CART URL}</arg>
+</arguments>
+<msg timestamp="20200922 02:30:14.120" level="INFO">Current location is 'http://localhost:3000/cart/'.</msg>
+<status status="PASS" starttime="20200922 02:30:14.112" endtime="20200922 02:30:14.121"></status>
+</kw>
+<status status="PASS" starttime="20200922 02:30:14.111" endtime="20200922 02:30:14.121"></status>
+</kw>
+<kw name="CLick Checkout" library="resourceCheckout">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>checkout_btn</arg>
+</arguments>
+<msg timestamp="20200922 02:30:14.123" level="INFO">Clicking button 'checkout_btn'.</msg>
+<status status="PASS" starttime="20200922 02:30:14.123" endtime="20200922 02:30:14.217"></status>
+</kw>
+<status status="PASS" starttime="20200922 02:30:14.122" endtime="20200922 02:30:14.217"></status>
+</kw>
+<status status="PASS" starttime="20200922 02:30:06.505" endtime="20200922 02:30:14.217" critical="yes"></status>
+</test>
+<doc>A test suite with a single test for Checkout.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="PASS" starttime="20200922 02:30:06.217" endtime="20200922 02:30:14.224"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Valid Checkout">Valid Checkout</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

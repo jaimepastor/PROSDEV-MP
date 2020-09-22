@@ -6,6 +6,12 @@ Documentation     A test suite with a single test for Checkout.
 Resource          resourceCheckout.robot
 
 *** Test Cases ***
-Checkout
-    Open Browser To Cart
+Valid Checkout
+    Open Browser To Login Page
+    Input Username    reb@gmail.com
+    Input Password    12345678
+    Submit Credentials
+    Dashboard Page Should Be Open
+    Click Cart
+    Cart Should be Open
     CLick Checkout
