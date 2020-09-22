@@ -10,7 +10,7 @@ Library           SeleniumLibrary
 ${SERVER}         localhost:3000
 ${BROWSER}        Chrome
 ${DELAY}          0
-${VALID USER}     reb@gmail.com 
+${VALID USER}     jstn@yahoo.com 
 ${VALID PASSWORD}    12345678
 ${LOGIN URL}      http://${SERVER}/user/loginpage
 ${DASHBOARD URL}    http://${SERVER}/game/games

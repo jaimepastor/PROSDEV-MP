@@ -12,6 +12,7 @@ ${BROWSER}        Chrome
 ${DELAY}          0
 ${VALID USER}     jstn@yahoo.com   
 ${VALID PASSWORD}    12345678
+${VALID LINK}    https://steamcdn-a.akamaihd.net/steam/apps/945360/header.jpg?t=1598556351
 ${LOGIN URL}      http://${SERVER}/user/loginpage
 ${ADDGAME URL}      http://${SERVER}/game/new-game
 ${DASHBOARD URL}    http://${SERVER}/game/games

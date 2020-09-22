@@ -14,14 +14,14 @@ Test Setup        Go To Add Game Page
 Test Template     Adding games With Invalid Inputs Should Fail
 Resource          resourcegame.robot
 
-*** Test Cases ***               USER NAME        PASSWORD            
-Invalid Username                 invalid          ${VALID PASSWORD}
-Invalid Password                 ${VALID USER}    invalid
-Invalid Username And Password    invalid          whatever
-Empty Username                   ${EMPTY}         ${VALID PASSWORD}
-Empty Password                   ${VALID USER}    ${EMPTY}
-Empty Username And Password      ${EMPTY}         ${EMPTY}
-
+*** Test Cases ***               TITLE            LINK                    DATE            GENRE        PLATFORM        RATING                    
+Invalid Game Title               ${EMPTY}         ${VALID LINK}           2020-07-08      Shooter      PS4             Adults
+Invalid Link                     Among Us         ${EMPTY}                2020-07-08      Shooter      PS4             Adults
+Invalid Date                     Among Us         ${VALID LINK}           ${EMPTY}        Shooter      PS4             Adults
+Invalid Genre                    Among Us         ${VALID LINK}           2020-07-08      ${EMPTY}     PS4             Adults
+Invalid Platform                 Among Us         ${VALID LINK}           2020-07-08      Shooter      ${EMPTY}        Adults
+Invalid Rating                   Among Us         ${VALID LINK}           2020-07-08      Shooter      PS4             ${EMPTY}
+    
 *** Keywords ***
 Adding games With Invalid Inputs Should Fail
     [Arguments]    ${title}    ${link}    ${date}    ${genre}    ${rating}    ${platform}
@@ -32,5 +32,4 @@ Adding games With Invalid Inputs Should Fail
     Select Platform    ${platform}
     Select Rating    ${rating}
     CLick Add Game
-    Sleep 3s
     [Teardown]    Close Browser

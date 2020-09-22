@@ -15,8 +15,4 @@ Valid Add Game
     Select Platform    PS4
     Select Rating    Adults
     CLick Add Game
-<<<<<<< HEAD
-   
-=======
     [Teardown]    Close Browser
->>>>>>> 5b1e565259e41129320c80d63d51bfab987de5fc
