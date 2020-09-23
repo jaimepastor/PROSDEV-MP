@@ -8,7 +8,7 @@ Library           SeleniumLibrary
 
 *** Variables ***
 ${SERVER}         localhost:3000
-${BROWSER}        Chrome
+${BROWSER}        Firefox
 ${DELAY}          0
 ${VALID USER}     jstn@yahoo.com 
 ${VALID PASSWORD}    12345678
