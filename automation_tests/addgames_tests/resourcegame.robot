@@ -8,10 +8,11 @@ Library           SeleniumLibrary
 
 *** Variables ***
 ${SERVER}         localhost:3000
-${BROWSER}        Chrome
+${BROWSER}        Firefox
 ${DELAY}          0
 ${VALID USER}     jstn@yahoo.com   
 ${VALID PASSWORD}    12345678
+${VALID LINK}    https://steamcdn-a.akamaihd.net/steam/apps/945360/header.jpg?t=1598556351
 ${LOGIN URL}      http://${SERVER}/user/loginpage
 ${ADDGAME URL}      http://${SERVER}/game/new-game
 ${DASHBOARD URL}    http://${SERVER}/game/games
@@ -63,8 +64,8 @@ Input Game Link
 
 Input Game Date
     [Arguments]    ${date}
-    Click Element  xpath=/html/body/div/div[2]/form/div[1]/div[3]/div[2]/input
-    Send Keys    release    ${date}
+    Click Element    xpath=/html/body/div/div[2]/form/div[1]/div[3]/div[2]/input
+    Press Keys    release    ${date}
 
 Select Genre
     [Arguments]    ${genre}
@@ -81,7 +82,4 @@ Select Platform
 CLick Add Game
     Click Button  add_gameBtn
 
-Sleep Time
-[Arguments]    ${time}
-Sleep ${time}
 
