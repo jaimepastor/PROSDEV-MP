@@ -6,6 +6,7 @@ const Game = require("../models/game")
 const User = require("../models/user")
 const History = require("../models/history")
 const bodyparser = require("body-parser")
+const moment = require("moment")
 
 const app = express()
 
@@ -62,7 +63,7 @@ router.post("/new-review-return", function(req,res){
                     const his = {
                         user: history.user,
                         postingID: history.postingID,
-                        rentDate: history.rentDate,
+                        rentDate: moment(history.rentDate).format("MMMM D, YYYY"),
                         duration: history.duration,
                         returned: true
                     }
@@ -93,7 +94,7 @@ router.post("/new-review-return", function(req,res){
                         const his = {
                             user: history.user,
                             postingID: history.postingID,
-                            rentDate: history.rentDate,
+                            rentDate: moment(history.rentDate).format("MMMM D, YYYY"),
                             duration: history.duration,
                             returned: true
                         }
@@ -136,7 +137,7 @@ router.post("/new-review-history", function(req,res){
                     const his = {
                         user: history.user,
                         postingID: history.postingID,
-                        rentDate: history.rentDate,
+                        rentDate: moment(history.rentDate).format("MMMM D, YYYY"),
                         duration: history.duration,
                         returned: true
                     }
@@ -167,7 +168,7 @@ router.post("/new-review-history", function(req,res){
                         const his = {
                             user: history.user,
                             postingID: history.postingID,
-                            rentDate: history.rentDate,
+                            rentDate: moment(history.rentDate).format("MMMM D, YYYY"),
                             duration: history.duration,
                             returned: true
                         }

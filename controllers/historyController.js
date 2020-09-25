@@ -7,6 +7,7 @@ const User = require("../models/user")
 const bodyparser = require("body-parser")
 const Cart = require("../models/cart")
 const { duration } = require("moment")
+const moment = require("moment")
 
 const app = express()
 
@@ -26,16 +27,16 @@ router.get('/history', async function(req, res){
           const post = await Post.get(postingID)
           const game = await Game.getTitle(post.title)
           var date = new Date(history[i].rentDate)
-          date.setDate(history[i].rentDate.getDate() + history[i].duration)
+          date = moment(date.setDate(history[i].rentDate.getDate() + history[i].duration)).format("MMMM D, YYYY")
           const historyRecord = {
             postingID : postingID,
             title : game.title,
             platform : game.platform,
             genre : game.genre,
-            release : game.release,
+            release : moment(game.release).format("MMMM D, YYYY"),
             link : game.link,
             owner : post.user,
-            startDate : history[i].rentDate,
+            startDate : moment(history[i].rentDate).format("MMMM D, YYYY"),
             endDate: date,
             duration : history[i].duration,
             price : post.price,
@@ -105,12 +106,12 @@ router.get("/rented-games", function(req, res){
                                 postingID: posts[i]._id,
                                 platform : game.platform,
                                 genre : game.genre,
-                                release : game.release,
+                                release : moment(game.release).format("MMMM D, YYYY"),
                                 link : game.link,
                                 user : user.firstName + " " + user.lastName,
                                 email : user.email, 
-                                startDate : history.rentDate,
-                                endDate: date,
+                                startDate : moment(history.rentDate).format("MMMM D, YYYY"),
+                                endDate: moment(date).format("MMMM D, YYYY"),
                                 duration : history.duration,
                                 price : posts[i].price,
                                 total: posts[i].price * history.duration,
@@ -143,11 +144,11 @@ router.get("/return-games", function(req, res){
                     title : game.title,
                     platform : game.platform,
                     genre : game.genre,
-                    release : game.release,
+                    release : moment(game.release).format("MMMM D, YYYY"),
                     link : game.link,
                     owner : post.user,
-                    startDate : history[i].rentDate,
-                    endDate: date,
+                    startDate : moment(history[i].rentDate).format("MMMM D, YYYY"),
+                    endDate: moment(date).format("MMMM D, YYYY"),
                     duration : history[i].duration,
                     price : post.price,
                     total: post.price * history[i].duration,

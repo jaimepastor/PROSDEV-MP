@@ -52,33 +52,33 @@
                 });
             </script>
             <!--START-->
-            <h1 id="game_title"> {{game.title}}</h1>         
+            <h1 id="game_title"> {{temp.title}}</h1>         
             <div class="details-container">
                 <div class="product-image-container">
-                    <img class="product-image" src="{{game.link}}">
+                    <img class="product-image" src="{{temp.link}}">
                 </div>
                         
                 <div class="product-container">
                     <div class="left_info">
                         <div class="details">
                             <span id="release-label"> Rating: </span>
-                            <span id="release">{{game.rating}}</span>
+                            <span id="release">{{temp.rating}}</span>
                         </div>
                         <div class="details">
                             <span id="release-label"> Console: </span>
-                            <span id="release">{{game.platform}}</span>
+                            <span id="release">{{temp.platform}}</span>
                         </div>
                         <div class="details">
                             <span id="release-label"> Genre: </span>
-                            <span id="release">{{game.genre}}</span>
+                            <span id="release">{{temp.genre}}</span>
                         </div>
                         <div class="details">
                             <span id="release-label">Released:</span>
-                            <span id="release">{{game.release}}</span>
+                            <span id="release">{{temp.release}}</span>
                         </div>
                         <div class="details">
                             <span id="release-label">Views: </span>
-                            <span id="release">{{game.clicks}} views</span>
+                            <span id="release">{{temp.clicks}} views</span>
                         </div>
                         
                     </div>
@@ -103,8 +103,8 @@
                             <span id="release-label"> Condition: </span>
                             <span id="release">{{description}}</span>
                         </div>
-                        <input type="hidden" value="{{game.title}}" name="title">
-                        <input type="hidden" value="{{game.release}}" name="release">
+                        <input type="hidden" value="{{temp.title}}" name="title">
+                        <input type="hidden" value="{{temp.release}}" name="release">
                     </div>
                     <div class="details_lower">
                         <div class="fix">
@@ -128,7 +128,7 @@
                         </div>
                         <button class="rent_button" type="submit">ADD TO CART</button>
                         <input type="hidden" value="{{_id}}" name="postingID">
-                        <input type="hidden" value="{{game._id}}" name="gameID">
+                        <input type="hidden" value="{{temp._id}}" name="gameID">
                         {{!-- <a href="/post/available">    
                             <div class="rent_button">Available for Rent</div>
                         </a> --}}  
