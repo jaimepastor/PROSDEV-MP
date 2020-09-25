@@ -11,25 +11,56 @@ Documentation     A test suite containing tests related to invalid adding of gam
 Suite Setup       Open Browser To Add Game Page
 Suite Teardown    Close Browser
 Test Setup        Go To Add Game Page
-Test Template     Adding games With Invalid Inputs Should Fail
 Resource          resourcegame.robot
 
-*** Test Cases ***               TITLE            LINK                    DATE            GENRE        PLATFORM        RATING                    
-Invalid Game Title               ${EMPTY}         ${VALID LINK}           2020-07-08      Shooter      PS4             Adults
-Invalid Link                     Among Us         ${EMPTY}                2020-07-08      Shooter      PS4             Adults
-Invalid Date                     Among Us         ${VALID LINK}           ${EMPTY}        Shooter      PS4             Adults
-Invalid Genre                    Among Us         ${VALID LINK}           2020-07-08      ${EMPTY}     PS4             Adults
-Invalid Platform                 Among Us         ${VALID LINK}           2020-07-08      Shooter      ${EMPTY}        Adults
-Invalid Rating                   Among Us         ${VALID LINK}           2020-07-08      Shooter      PS4             ${EMPTY}
-    
-*** Keywords ***
-Adding games With Invalid Inputs Should Fail
-    [Arguments]    ${title}    ${link}    ${date}    ${genre}    ${rating}    ${platform}
-    Input Game Title    ${title}  
-    Input Game Link    ${link}
-    Input Game Date  ${date}
-    Select Genre    ${genre}
-    Select Platform    ${platform}
-    Select Rating    ${rating}
+*** Test Cases *** 
+Invalid Game Title
+    Input Game Title    ${EMPTY}  
+    Input Game Link    ${VALID LINK}
+    Input Game Date  2020-07-08
+    Select Genre    Shooter
+    Select Platform    PS4
+    Select Rating    Adults
     CLick Add Game
-    [Teardown]    Close Browser
+
+Invalid Link
+    Input Game Title    Among Us  
+    Input Game Link    ${EMPTY}
+    Input Game Date  2020-07-08
+    Select Genre    Shooter
+    Select Platform    PS4
+    Select Rating    Adults
+    CLick Add Game
+
+Invalid Date
+    Input Game Title    Among Us  
+    Input Game Link    ${VALID LINK}
+    Input Game Date  ${EMPTY}
+    Select Genre    Shooter
+    Select Platform    PS4
+    Select Rating    Adults
+    CLick Add Game
+
+Invalid Genre
+    Input Game Title    ${EMPTY}  
+    Input Game Link    ${VALID LINK}
+    Input Game Date  2020-07-08
+    Select Platform    PS4
+    Select Rating    Adults
+    CLick Add Game
+
+Invalid Platform
+    Input Game Title    Among Us  
+    Input Game Link    ${VALID LINK}
+    Input Game Date  2020-07-08
+    Select Genre    Shooter
+    Select Rating    Adults
+    CLick Add Game
+
+Invalid Rating
+    Input Game Title    Among Us  
+    Input Game Link    ${VALID LINK}
+    Input Game Date  2020-07-08
+    Select Genre    Shooter
+    Select Platform    PS4
+    CLick Add Game

@@ -14,12 +14,12 @@ Test Template     Invalid Login
 Resource          resource.robot
 
 *** Test Cases ***               USER NAME        PASSWORD
-Invalid Username                 invalid          ${VALID PASSWORD}
+Invalid Email                    invalid          ${VALID PASSWORD}
 Invalid Password                 ${VALID USER}    invalid
-Invalid Username And Password    invalid          whatever
-Empty Username                   ${EMPTY}         ${VALID PASSWORD}
+Invalid Email And Password       invalid          whatever
+Empty Email                      ${EMPTY}         ${VALID PASSWORD}
 Empty Password                   ${VALID USER}    ${EMPTY}
-Empty Username And Password      ${EMPTY}         ${EMPTY}
+Empty Email And Password         ${EMPTY}         ${EMPTY}
 
 
 *** Keywords ***
@@ -29,5 +29,3 @@ Invalid Login
     Input Username    ${username}
     Input Password    ${password}
     Submit Credentials
-    Login Page Should Be Open
-    [Teardown]    Close Browser
