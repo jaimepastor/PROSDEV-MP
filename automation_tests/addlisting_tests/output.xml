@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.8.3 on win32)" generated="20200926 03:23:51.889" rpa="false">
+<robot generator="Robot 3.2.2 (Python 3.8.3 on win32)" generated="20200926 15:47:46.540" rpa="false">
 <suite id="s1" name="valid addListing" source="C:\Users\BECKY\Documents\03_GitHub\PROSDEV-MP\automation_tests\addlisting_tests\valid_addListing.robot">
 <test id="s1-t1" name="Valid Add Listing">
 <kw name="Open Browser To Login Page" library="resourceListing">
@@ -9,21 +9,21 @@
 <arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200926 03:23:52.242" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/user/loginpage'.</msg>
-<status status="PASS" starttime="20200926 03:23:52.241" endtime="20200926 03:23:55.946"></status>
+<msg timestamp="20200926 15:47:47.151" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/user/loginpage'.</msg>
+<status status="PASS" starttime="20200926 15:47:47.151" endtime="20200926 15:47:50.996"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200926 03:23:55.946" endtime="20200926 03:23:58.094"></status>
+<status status="PASS" starttime="20200926 15:47:50.997" endtime="20200926 15:47:53.124"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" starttime="20200926 03:23:58.094" endtime="20200926 03:23:58.095"></status>
+<status status="PASS" starttime="20200926 15:47:53.124" endtime="20200926 15:47:53.124"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:23:52.241" endtime="20200926 03:23:58.095"></status>
+<status status="PASS" starttime="20200926 15:47:47.150" endtime="20200926 15:47:53.125"></status>
 </kw>
 <kw name="Input Username" library="resourceListing">
 <arguments>
@@ -35,10 +35,10 @@
 <arg>email</arg>
 <arg>${username}</arg>
 </arguments>
-<msg timestamp="20200926 03:23:58.098" level="INFO">Typing text 'reb@gmail.com' into text field 'email'.</msg>
-<status status="PASS" starttime="20200926 03:23:58.098" endtime="20200926 03:23:58.284"></status>
+<msg timestamp="20200926 15:47:53.128" level="INFO">Typing text 'reb@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20200926 15:47:53.127" endtime="20200926 15:47:53.332"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:23:58.097" endtime="20200926 03:23:58.285"></status>
+<status status="PASS" starttime="20200926 15:47:53.126" endtime="20200926 15:47:53.332"></status>
 </kw>
 <kw name="Input Password" library="resourceListing">
 <arguments>
@@ -50,10 +50,10 @@
 <arg>password</arg>
 <arg>${password}</arg>
 </arguments>
-<msg timestamp="20200926 03:23:58.292" level="INFO">Typing text '12345678' into text field 'password'.</msg>
-<status status="PASS" starttime="20200926 03:23:58.291" endtime="20200926 03:23:58.413"></status>
+<msg timestamp="20200926 15:47:53.334" level="INFO">Typing text '12345678' into text field 'password'.</msg>
+<status status="PASS" starttime="20200926 15:47:53.334" endtime="20200926 15:47:53.501"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:23:58.290" endtime="20200926 03:23:58.414"></status>
+<status status="PASS" starttime="20200926 15:47:53.333" endtime="20200926 15:47:53.501"></status>
 </kw>
 <kw name="Submit Credentials" library="resourceListing">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -61,10 +61,10 @@
 <arguments>
 <arg>Login</arg>
 </arguments>
-<msg timestamp="20200926 03:23:58.424" level="INFO">Clicking button 'Login'.</msg>
-<status status="PASS" starttime="20200926 03:23:58.423" endtime="20200926 03:23:59.578"></status>
+<msg timestamp="20200926 15:47:53.503" level="INFO">Clicking button 'Login'.</msg>
+<status status="PASS" starttime="20200926 15:47:53.502" endtime="20200926 15:47:56.526"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:23:58.423" endtime="20200926 03:23:59.578"></status>
+<status status="PASS" starttime="20200926 15:47:53.502" endtime="20200926 15:47:56.527"></status>
 </kw>
 <kw name="Dashboard Page Should Be Open" library="resourceListing">
 <kw name="Location Should Be" library="SeleniumLibrary">
@@ -72,10 +72,10 @@
 <arguments>
 <arg>${DASHBOARD URL}</arg>
 </arguments>
-<msg timestamp="20200926 03:23:59.588" level="INFO">Current location is 'http://localhost:3000/game/games'.</msg>
-<status status="PASS" starttime="20200926 03:23:59.581" endtime="20200926 03:23:59.589"></status>
+<msg timestamp="20200926 15:47:56.554" level="INFO">Current location is 'http://localhost:3000/game/games'.</msg>
+<status status="PASS" starttime="20200926 15:47:56.530" endtime="20200926 15:47:56.554"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:23:59.580" endtime="20200926 03:23:59.590"></status>
+<status status="PASS" starttime="20200926 15:47:56.529" endtime="20200926 15:47:56.554"></status>
 </kw>
 <kw name="Click Profile" library="resourceListing">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -83,10 +83,10 @@
 <arguments>
 <arg>profile</arg>
 </arguments>
-<msg timestamp="20200926 03:23:59.596" level="INFO">Clicking element 'profile'.</msg>
-<status status="PASS" starttime="20200926 03:23:59.595" endtime="20200926 03:23:59.881"></status>
+<msg timestamp="20200926 15:47:56.558" level="INFO">Clicking element 'profile'.</msg>
+<status status="PASS" starttime="20200926 15:47:56.557" endtime="20200926 15:47:56.885"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:23:59.594" endtime="20200926 03:23:59.882"></status>
+<status status="PASS" starttime="20200926 15:47:56.557" endtime="20200926 15:47:56.885"></status>
 </kw>
 <kw name="Profile Should be Open" library="resourceListing">
 <kw name="Location Should Be" library="SeleniumLibrary">
@@ -94,10 +94,10 @@
 <arguments>
 <arg>${PROFILE URL}</arg>
 </arguments>
-<msg timestamp="20200926 03:23:59.921" level="INFO">Current location is 'http://localhost:3000/user/profile'.</msg>
-<status status="PASS" starttime="20200926 03:23:59.883" endtime="20200926 03:23:59.922"></status>
+<msg timestamp="20200926 15:47:56.904" level="INFO">Current location is 'http://localhost:3000/user/profile'.</msg>
+<status status="PASS" starttime="20200926 15:47:56.886" endtime="20200926 15:47:56.904"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:23:59.882" endtime="20200926 03:23:59.922"></status>
+<status status="PASS" starttime="20200926 15:47:56.886" endtime="20200926 15:47:56.905"></status>
 </kw>
 <kw name="Click Listing" library="resourceListing">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -105,10 +105,10 @@
 <arguments>
 <arg>add_listing_btn</arg>
 </arguments>
-<msg timestamp="20200926 03:23:59.925" level="INFO">Clicking element 'add_listing_btn'.</msg>
-<status status="PASS" starttime="20200926 03:23:59.925" endtime="20200926 03:24:00.245"></status>
+<msg timestamp="20200926 15:47:56.906" level="INFO">Clicking element 'add_listing_btn'.</msg>
+<status status="PASS" starttime="20200926 15:47:56.906" endtime="20200926 15:47:57.217"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:23:59.924" endtime="20200926 03:24:00.246"></status>
+<status status="PASS" starttime="20200926 15:47:56.905" endtime="20200926 15:47:57.217"></status>
 </kw>
 <kw name="Listing Should be Open" library="resourceListing">
 <kw name="Location Should Be" library="SeleniumLibrary">
@@ -116,10 +116,10 @@
 <arguments>
 <arg>${ADD LISTING URL}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:00.265" level="INFO">Current location is 'http://localhost:3000/post/upload'.</msg>
-<status status="PASS" starttime="20200926 03:24:00.251" endtime="20200926 03:24:00.266"></status>
+<msg timestamp="20200926 15:47:57.224" level="INFO">Current location is 'http://localhost:3000/post/upload'.</msg>
+<status status="PASS" starttime="20200926 15:47:57.218" endtime="20200926 15:47:57.224"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:00.250" endtime="20200926 03:24:00.266"></status>
+<status status="PASS" starttime="20200926 15:47:57.218" endtime="20200926 15:47:57.224"></status>
 </kw>
 <kw name="Select Title" library="resourceListing">
 <arguments>
@@ -131,10 +131,10 @@
 <arg>title</arg>
 <arg>${title}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:00.268" level="INFO">Selecting options from selection list 'title' by label Among Us.</msg>
-<status status="PASS" starttime="20200926 03:24:00.267" endtime="20200926 03:24:00.377"></status>
+<msg timestamp="20200926 15:47:57.236" level="INFO">Selecting options from selection list 'title' by label Among Us.</msg>
+<status status="PASS" starttime="20200926 15:47:57.236" endtime="20200926 15:47:57.366"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:00.267" endtime="20200926 03:24:00.378"></status>
+<status status="PASS" starttime="20200926 15:47:57.235" endtime="20200926 15:47:57.367"></status>
 </kw>
 <kw name="Input Price" library="resourceListing">
 <arguments>
@@ -146,10 +146,10 @@
 <arg>price</arg>
 <arg>${price}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:00.379" level="INFO">Typing text '200' into text field 'price'.</msg>
-<status status="PASS" starttime="20200926 03:24:00.379" endtime="20200926 03:24:00.513"></status>
+<msg timestamp="20200926 15:47:57.369" level="INFO">Typing text '200' into text field 'price'.</msg>
+<status status="PASS" starttime="20200926 15:47:57.368" endtime="20200926 15:47:57.548"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:00.378" endtime="20200926 03:24:00.513"></status>
+<status status="PASS" starttime="20200926 15:47:57.367" endtime="20200926 15:47:57.548"></status>
 </kw>
 <kw name="Input Condition" library="resourceListing">
 <arguments>
@@ -161,10 +161,10 @@
 <arg>description</arg>
 <arg>${description}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:00.515" level="INFO">Typing text 'Good as New' into text field 'description'.</msg>
-<status status="PASS" starttime="20200926 03:24:00.515" endtime="20200926 03:24:00.661"></status>
+<msg timestamp="20200926 15:47:57.550" level="INFO">Typing text 'Good as New' into text field 'description'.</msg>
+<status status="PASS" starttime="20200926 15:47:57.550" endtime="20200926 15:47:57.707"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:00.514" endtime="20200926 03:24:00.662"></status>
+<status status="PASS" starttime="20200926 15:47:57.549" endtime="20200926 15:47:57.707"></status>
 </kw>
 <kw name="Submit Credentials Upload" library="resourceListing">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -172,16 +172,27 @@
 <arguments>
 <arg>Upload</arg>
 </arguments>
-<msg timestamp="20200926 03:24:00.663" level="INFO">Clicking button 'Upload'.</msg>
-<status status="PASS" starttime="20200926 03:24:00.663" endtime="20200926 03:24:00.873"></status>
+<msg timestamp="20200926 15:47:57.711" level="INFO">Clicking button 'Upload'.</msg>
+<status status="PASS" starttime="20200926 15:47:57.710" endtime="20200926 15:47:57.981"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:00.663" endtime="20200926 03:24:00.873"></status>
+<status status="PASS" starttime="20200926 15:47:57.708" endtime="20200926 15:47:57.982"></status>
+</kw>
+<kw name="Profile Should be Open" library="resourceListing">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${PROFILE URL}</arg>
+</arguments>
+<msg timestamp="20200926 15:47:58.009" level="INFO">Current location is 'http://localhost:3000/user/profile'.</msg>
+<status status="PASS" starttime="20200926 15:47:57.984" endtime="20200926 15:47:58.009"></status>
+</kw>
+<status status="PASS" starttime="20200926 15:47:57.983" endtime="20200926 15:47:58.011"></status>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="teardown">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200926 03:24:00.874" endtime="20200926 03:24:03.944"></status>
+<status status="PASS" starttime="20200926 15:47:58.017" endtime="20200926 15:48:00.829"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:23:52.240" endtime="20200926 03:24:03.944" critical="yes"></status>
+<status status="PASS" starttime="20200926 15:47:47.148" endtime="20200926 15:48:00.830" critical="yes"></status>
 </test>
 <test id="s1-t2" name="Invalid Add Listing - invalid price">
 <kw name="Open Browser To Login Page" library="resourceListing">
@@ -191,21 +202,21 @@
 <arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:03.953" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/user/loginpage'.</msg>
-<status status="PASS" starttime="20200926 03:24:03.953" endtime="20200926 03:24:07.671"></status>
+<msg timestamp="20200926 15:48:00.836" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/user/loginpage'.</msg>
+<status status="PASS" starttime="20200926 15:48:00.835" endtime="20200926 15:48:04.471"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200926 03:24:07.672" endtime="20200926 03:24:09.808"></status>
+<status status="PASS" starttime="20200926 15:48:04.472" endtime="20200926 15:48:06.598"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" starttime="20200926 03:24:09.808" endtime="20200926 03:24:09.808"></status>
+<status status="PASS" starttime="20200926 15:48:06.598" endtime="20200926 15:48:06.598"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:03.952" endtime="20200926 03:24:09.809"></status>
+<status status="PASS" starttime="20200926 15:48:00.834" endtime="20200926 15:48:06.599"></status>
 </kw>
 <kw name="Input Username" library="resourceListing">
 <arguments>
@@ -217,10 +228,10 @@
 <arg>email</arg>
 <arg>${username}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:09.810" level="INFO">Typing text 'reb@gmail.com' into text field 'email'.</msg>
-<status status="PASS" starttime="20200926 03:24:09.810" endtime="20200926 03:24:09.964"></status>
+<msg timestamp="20200926 15:48:06.600" level="INFO">Typing text 'reb@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20200926 15:48:06.600" endtime="20200926 15:48:06.792"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:09.809" endtime="20200926 03:24:09.965"></status>
+<status status="PASS" starttime="20200926 15:48:06.599" endtime="20200926 15:48:06.793"></status>
 </kw>
 <kw name="Input Password" library="resourceListing">
 <arguments>
@@ -232,10 +243,10 @@
 <arg>password</arg>
 <arg>${password}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:09.967" level="INFO">Typing text '12345678' into text field 'password'.</msg>
-<status status="PASS" starttime="20200926 03:24:09.967" endtime="20200926 03:24:10.100"></status>
+<msg timestamp="20200926 15:48:06.795" level="INFO">Typing text '12345678' into text field 'password'.</msg>
+<status status="PASS" starttime="20200926 15:48:06.794" endtime="20200926 15:48:06.933"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:09.966" endtime="20200926 03:24:10.100"></status>
+<status status="PASS" starttime="20200926 15:48:06.794" endtime="20200926 15:48:06.933"></status>
 </kw>
 <kw name="Submit Credentials" library="resourceListing">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -243,10 +254,10 @@
 <arguments>
 <arg>Login</arg>
 </arguments>
-<msg timestamp="20200926 03:24:10.102" level="INFO">Clicking button 'Login'.</msg>
-<status status="PASS" starttime="20200926 03:24:10.101" endtime="20200926 03:24:11.084"></status>
+<msg timestamp="20200926 15:48:06.935" level="INFO">Clicking button 'Login'.</msg>
+<status status="PASS" starttime="20200926 15:48:06.934" endtime="20200926 15:48:08.011"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:10.101" endtime="20200926 03:24:11.084"></status>
+<status status="PASS" starttime="20200926 15:48:06.934" endtime="20200926 15:48:08.011"></status>
 </kw>
 <kw name="Dashboard Page Should Be Open" library="resourceListing">
 <kw name="Location Should Be" library="SeleniumLibrary">
@@ -254,10 +265,10 @@
 <arguments>
 <arg>${DASHBOARD URL}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:11.112" level="INFO">Current location is 'http://localhost:3000/game/games'.</msg>
-<status status="PASS" starttime="20200926 03:24:11.087" endtime="20200926 03:24:11.112"></status>
+<msg timestamp="20200926 15:48:08.019" level="INFO">Current location is 'http://localhost:3000/game/games'.</msg>
+<status status="PASS" starttime="20200926 15:48:08.013" endtime="20200926 15:48:08.020"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:11.085" endtime="20200926 03:24:11.113"></status>
+<status status="PASS" starttime="20200926 15:48:08.012" endtime="20200926 15:48:08.020"></status>
 </kw>
 <kw name="Click Profile" library="resourceListing">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -265,10 +276,10 @@
 <arguments>
 <arg>profile</arg>
 </arguments>
-<msg timestamp="20200926 03:24:11.116" level="INFO">Clicking element 'profile'.</msg>
-<status status="PASS" starttime="20200926 03:24:11.115" endtime="20200926 03:24:11.422"></status>
+<msg timestamp="20200926 15:48:08.022" level="INFO">Clicking element 'profile'.</msg>
+<status status="PASS" starttime="20200926 15:48:08.022" endtime="20200926 15:48:08.286"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:11.114" endtime="20200926 03:24:11.423"></status>
+<status status="PASS" starttime="20200926 15:48:08.021" endtime="20200926 15:48:08.286"></status>
 </kw>
 <kw name="Profile Should be Open" library="resourceListing">
 <kw name="Location Should Be" library="SeleniumLibrary">
@@ -276,10 +287,10 @@
 <arguments>
 <arg>${PROFILE URL}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:11.450" level="INFO">Current location is 'http://localhost:3000/user/profile'.</msg>
-<status status="PASS" starttime="20200926 03:24:11.430" endtime="20200926 03:24:11.450"></status>
+<msg timestamp="20200926 15:48:08.302" level="INFO">Current location is 'http://localhost:3000/user/profile'.</msg>
+<status status="PASS" starttime="20200926 15:48:08.290" endtime="20200926 15:48:08.302"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:11.430" endtime="20200926 03:24:11.451"></status>
+<status status="PASS" starttime="20200926 15:48:08.289" endtime="20200926 15:48:08.302"></status>
 </kw>
 <kw name="Click Listing" library="resourceListing">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -287,10 +298,10 @@
 <arguments>
 <arg>add_listing_btn</arg>
 </arguments>
-<msg timestamp="20200926 03:24:11.454" level="INFO">Clicking element 'add_listing_btn'.</msg>
-<status status="PASS" starttime="20200926 03:24:11.453" endtime="20200926 03:24:11.712"></status>
+<msg timestamp="20200926 15:48:08.303" level="INFO">Clicking element 'add_listing_btn'.</msg>
+<status status="PASS" starttime="20200926 15:48:08.303" endtime="20200926 15:48:08.553"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:11.451" endtime="20200926 03:24:11.712"></status>
+<status status="PASS" starttime="20200926 15:48:08.302" endtime="20200926 15:48:08.553"></status>
 </kw>
 <kw name="Listing Should be Open" library="resourceListing">
 <kw name="Location Should Be" library="SeleniumLibrary">
@@ -298,10 +309,10 @@
 <arguments>
 <arg>${ADD LISTING URL}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:11.744" level="INFO">Current location is 'http://localhost:3000/post/upload'.</msg>
-<status status="PASS" starttime="20200926 03:24:11.713" endtime="20200926 03:24:11.744"></status>
+<msg timestamp="20200926 15:48:08.575" level="INFO">Current location is 'http://localhost:3000/post/upload'.</msg>
+<status status="PASS" starttime="20200926 15:48:08.556" endtime="20200926 15:48:08.576"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:11.713" endtime="20200926 03:24:11.745"></status>
+<status status="PASS" starttime="20200926 15:48:08.555" endtime="20200926 15:48:08.577"></status>
 </kw>
 <kw name="Select Title" library="resourceListing">
 <arguments>
@@ -313,10 +324,10 @@
 <arg>title</arg>
 <arg>${title}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:11.746" level="INFO">Selecting options from selection list 'title' by label Among Us.</msg>
-<status status="PASS" starttime="20200926 03:24:11.746" endtime="20200926 03:24:11.864"></status>
+<msg timestamp="20200926 15:48:08.580" level="INFO">Selecting options from selection list 'title' by label Among Us.</msg>
+<status status="PASS" starttime="20200926 15:48:08.580" endtime="20200926 15:48:08.675"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:11.745" endtime="20200926 03:24:11.864"></status>
+<status status="PASS" starttime="20200926 15:48:08.579" endtime="20200926 15:48:08.676"></status>
 </kw>
 <kw name="Input Price" library="resourceListing">
 <arguments>
@@ -328,10 +339,10 @@
 <arg>price</arg>
 <arg>${price}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:11.866" level="INFO">Typing text 'Invalid' into text field 'price'.</msg>
-<status status="PASS" starttime="20200926 03:24:11.865" endtime="20200926 03:24:12.013"></status>
+<msg timestamp="20200926 15:48:08.679" level="INFO">Typing text 'Invalid' into text field 'price'.</msg>
+<status status="PASS" starttime="20200926 15:48:08.678" endtime="20200926 15:48:08.823"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:11.865" endtime="20200926 03:24:12.013"></status>
+<status status="PASS" starttime="20200926 15:48:08.678" endtime="20200926 15:48:08.824"></status>
 </kw>
 <kw name="Input Condition" library="resourceListing">
 <arguments>
@@ -343,10 +354,10 @@
 <arg>description</arg>
 <arg>${description}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:12.015" level="INFO">Typing text 'Good as New' into text field 'description'.</msg>
-<status status="PASS" starttime="20200926 03:24:12.015" endtime="20200926 03:24:12.139"></status>
+<msg timestamp="20200926 15:48:08.828" level="INFO">Typing text 'Good as New' into text field 'description'.</msg>
+<status status="PASS" starttime="20200926 15:48:08.826" endtime="20200926 15:48:08.992"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:12.014" endtime="20200926 03:24:12.140"></status>
+<status status="PASS" starttime="20200926 15:48:08.825" endtime="20200926 15:48:08.993"></status>
 </kw>
 <kw name="Submit Credentials Upload" library="resourceListing">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -354,16 +365,27 @@
 <arguments>
 <arg>Upload</arg>
 </arguments>
-<msg timestamp="20200926 03:24:12.141" level="INFO">Clicking button 'Upload'.</msg>
-<status status="PASS" starttime="20200926 03:24:12.141" endtime="20200926 03:24:12.334"></status>
+<msg timestamp="20200926 15:48:08.995" level="INFO">Clicking button 'Upload'.</msg>
+<status status="PASS" starttime="20200926 15:48:08.994" endtime="20200926 15:48:09.211"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:12.140" endtime="20200926 03:24:12.334"></status>
+<status status="PASS" starttime="20200926 15:48:08.994" endtime="20200926 15:48:09.212"></status>
+</kw>
+<kw name="Listing Should be Open" library="resourceListing">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${ADD LISTING URL}</arg>
+</arguments>
+<msg timestamp="20200926 15:48:09.230" level="INFO">Current location is 'http://localhost:3000/post/upload'.</msg>
+<status status="PASS" starttime="20200926 15:48:09.215" endtime="20200926 15:48:09.231"></status>
+</kw>
+<status status="PASS" starttime="20200926 15:48:09.214" endtime="20200926 15:48:09.231"></status>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="teardown">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200926 03:24:12.335" endtime="20200926 03:24:14.563"></status>
+<status status="PASS" starttime="20200926 15:48:09.232" endtime="20200926 15:48:11.844"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:03.950" endtime="20200926 03:24:14.563" critical="yes"></status>
+<status status="PASS" starttime="20200926 15:48:00.832" endtime="20200926 15:48:11.847" critical="yes"></status>
 </test>
 <test id="s1-t3" name="Invalid Add Listing - Skip Select Game Title">
 <kw name="Open Browser To Login Page" library="resourceListing">
@@ -373,21 +395,21 @@
 <arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:14.573" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/user/loginpage'.</msg>
-<status status="PASS" starttime="20200926 03:24:14.573" endtime="20200926 03:24:19.491"></status>
+<msg timestamp="20200926 15:48:11.860" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:3000/user/loginpage'.</msg>
+<status status="PASS" starttime="20200926 15:48:11.858" endtime="20200926 15:48:15.534"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200926 03:24:19.491" endtime="20200926 03:24:21.646"></status>
+<status status="PASS" starttime="20200926 15:48:15.535" endtime="20200926 15:48:17.684"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" starttime="20200926 03:24:21.646" endtime="20200926 03:24:21.646"></status>
+<status status="PASS" starttime="20200926 15:48:17.684" endtime="20200926 15:48:17.685"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:14.572" endtime="20200926 03:24:21.647"></status>
+<status status="PASS" starttime="20200926 15:48:11.855" endtime="20200926 15:48:17.685"></status>
 </kw>
 <kw name="Input Username" library="resourceListing">
 <arguments>
@@ -399,10 +421,10 @@
 <arg>email</arg>
 <arg>${username}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:21.650" level="INFO">Typing text 'reb@gmail.com' into text field 'email'.</msg>
-<status status="PASS" starttime="20200926 03:24:21.649" endtime="20200926 03:24:21.843"></status>
+<msg timestamp="20200926 15:48:17.687" level="INFO">Typing text 'reb@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20200926 15:48:17.687" endtime="20200926 15:48:17.864"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:21.648" endtime="20200926 03:24:21.843"></status>
+<status status="PASS" starttime="20200926 15:48:17.686" endtime="20200926 15:48:17.865"></status>
 </kw>
 <kw name="Input Password" library="resourceListing">
 <arguments>
@@ -414,10 +436,10 @@
 <arg>password</arg>
 <arg>${password}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:21.845" level="INFO">Typing text '12345678' into text field 'password'.</msg>
-<status status="PASS" starttime="20200926 03:24:21.845" endtime="20200926 03:24:21.995"></status>
+<msg timestamp="20200926 15:48:17.867" level="INFO">Typing text '12345678' into text field 'password'.</msg>
+<status status="PASS" starttime="20200926 15:48:17.866" endtime="20200926 15:48:17.990"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:21.844" endtime="20200926 03:24:21.995"></status>
+<status status="PASS" starttime="20200926 15:48:17.866" endtime="20200926 15:48:17.990"></status>
 </kw>
 <kw name="Submit Credentials" library="resourceListing">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -425,10 +447,10 @@
 <arguments>
 <arg>Login</arg>
 </arguments>
-<msg timestamp="20200926 03:24:21.997" level="INFO">Clicking button 'Login'.</msg>
-<status status="PASS" starttime="20200926 03:24:21.996" endtime="20200926 03:24:23.071"></status>
+<msg timestamp="20200926 15:48:17.993" level="INFO">Clicking button 'Login'.</msg>
+<status status="PASS" starttime="20200926 15:48:17.992" endtime="20200926 15:48:19.339"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:21.996" endtime="20200926 03:24:23.071"></status>
+<status status="PASS" starttime="20200926 15:48:17.991" endtime="20200926 15:48:19.340"></status>
 </kw>
 <kw name="Dashboard Page Should Be Open" library="resourceListing">
 <kw name="Location Should Be" library="SeleniumLibrary">
@@ -436,10 +458,10 @@
 <arguments>
 <arg>${DASHBOARD URL}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:23.098" level="INFO">Current location is 'http://localhost:3000/game/games'.</msg>
-<status status="PASS" starttime="20200926 03:24:23.073" endtime="20200926 03:24:23.098"></status>
+<msg timestamp="20200926 15:48:19.349" level="INFO">Current location is 'http://localhost:3000/game/games'.</msg>
+<status status="PASS" starttime="20200926 15:48:19.342" endtime="20200926 15:48:19.349"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:23.073" endtime="20200926 03:24:23.098"></status>
+<status status="PASS" starttime="20200926 15:48:19.341" endtime="20200926 15:48:19.349"></status>
 </kw>
 <kw name="Click Profile" library="resourceListing">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -447,10 +469,10 @@
 <arguments>
 <arg>profile</arg>
 </arguments>
-<msg timestamp="20200926 03:24:23.100" level="INFO">Clicking element 'profile'.</msg>
-<status status="PASS" starttime="20200926 03:24:23.100" endtime="20200926 03:24:23.434"></status>
+<msg timestamp="20200926 15:48:19.351" level="INFO">Clicking element 'profile'.</msg>
+<status status="PASS" starttime="20200926 15:48:19.351" endtime="20200926 15:48:19.605"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:23.099" endtime="20200926 03:24:23.437"></status>
+<status status="PASS" starttime="20200926 15:48:19.350" endtime="20200926 15:48:19.605"></status>
 </kw>
 <kw name="Profile Should be Open" library="resourceListing">
 <kw name="Location Should Be" library="SeleniumLibrary">
@@ -458,10 +480,10 @@
 <arguments>
 <arg>${PROFILE URL}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:23.449" level="INFO">Current location is 'http://localhost:3000/user/profile'.</msg>
-<status status="PASS" starttime="20200926 03:24:23.442" endtime="20200926 03:24:23.449"></status>
+<msg timestamp="20200926 15:48:19.619" level="INFO">Current location is 'http://localhost:3000/user/profile'.</msg>
+<status status="PASS" starttime="20200926 15:48:19.607" endtime="20200926 15:48:19.619"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:23.442" endtime="20200926 03:24:23.449"></status>
+<status status="PASS" starttime="20200926 15:48:19.606" endtime="20200926 15:48:19.620"></status>
 </kw>
 <kw name="Click Listing" library="resourceListing">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -469,10 +491,10 @@
 <arguments>
 <arg>add_listing_btn</arg>
 </arguments>
-<msg timestamp="20200926 03:24:23.451" level="INFO">Clicking element 'add_listing_btn'.</msg>
-<status status="PASS" starttime="20200926 03:24:23.451" endtime="20200926 03:24:23.724"></status>
+<msg timestamp="20200926 15:48:19.622" level="INFO">Clicking element 'add_listing_btn'.</msg>
+<status status="PASS" starttime="20200926 15:48:19.622" endtime="20200926 15:48:19.858"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:23.450" endtime="20200926 03:24:23.724"></status>
+<status status="PASS" starttime="20200926 15:48:19.621" endtime="20200926 15:48:19.858"></status>
 </kw>
 <kw name="Listing Should be Open" library="resourceListing">
 <kw name="Location Should Be" library="SeleniumLibrary">
@@ -480,10 +502,10 @@
 <arguments>
 <arg>${ADD LISTING URL}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:23.732" level="INFO">Current location is 'http://localhost:3000/post/upload'.</msg>
-<status status="PASS" starttime="20200926 03:24:23.727" endtime="20200926 03:24:23.733"></status>
+<msg timestamp="20200926 15:48:19.866" level="INFO">Current location is 'http://localhost:3000/post/upload'.</msg>
+<status status="PASS" starttime="20200926 15:48:19.860" endtime="20200926 15:48:19.866"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:23.727" endtime="20200926 03:24:23.733"></status>
+<status status="PASS" starttime="20200926 15:48:19.859" endtime="20200926 15:48:19.867"></status>
 </kw>
 <kw name="Input Price" library="resourceListing">
 <arguments>
@@ -495,10 +517,10 @@
 <arg>price</arg>
 <arg>${price}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:23.737" level="INFO">Typing text 'Invalid' into text field 'price'.</msg>
-<status status="PASS" starttime="20200926 03:24:23.736" endtime="20200926 03:24:23.884"></status>
+<msg timestamp="20200926 15:48:19.873" level="INFO">Typing text 'Invalid' into text field 'price'.</msg>
+<status status="PASS" starttime="20200926 15:48:19.872" endtime="20200926 15:48:20.029"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:23.734" endtime="20200926 03:24:23.885"></status>
+<status status="PASS" starttime="20200926 15:48:19.872" endtime="20200926 15:48:20.029"></status>
 </kw>
 <kw name="Input Condition" library="resourceListing">
 <arguments>
@@ -510,10 +532,10 @@
 <arg>description</arg>
 <arg>${description}</arg>
 </arguments>
-<msg timestamp="20200926 03:24:23.891" level="INFO">Typing text 'Good as New' into text field 'description'.</msg>
-<status status="PASS" starttime="20200926 03:24:23.890" endtime="20200926 03:24:24.075"></status>
+<msg timestamp="20200926 15:48:20.033" level="INFO">Typing text 'Good as New' into text field 'description'.</msg>
+<status status="PASS" starttime="20200926 15:48:20.032" endtime="20200926 15:48:20.173"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:23.890" endtime="20200926 03:24:24.075"></status>
+<status status="PASS" starttime="20200926 15:48:20.031" endtime="20200926 15:48:20.175"></status>
 </kw>
 <kw name="Submit Credentials Upload" library="resourceListing">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -521,22 +543,33 @@
 <arguments>
 <arg>Upload</arg>
 </arguments>
-<msg timestamp="20200926 03:24:24.077" level="INFO">Clicking button 'Upload'.</msg>
-<status status="PASS" starttime="20200926 03:24:24.077" endtime="20200926 03:24:24.329"></status>
+<msg timestamp="20200926 15:48:20.178" level="INFO">Clicking button 'Upload'.</msg>
+<status status="PASS" starttime="20200926 15:48:20.178" endtime="20200926 15:48:20.363"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:24.076" endtime="20200926 03:24:24.329"></status>
+<status status="PASS" starttime="20200926 15:48:20.176" endtime="20200926 15:48:20.363"></status>
+</kw>
+<kw name="Listing Should be Open" library="resourceListing">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${ADD LISTING URL}</arg>
+</arguments>
+<msg timestamp="20200926 15:48:20.377" level="INFO">Current location is 'http://localhost:3000/post/upload'.</msg>
+<status status="PASS" starttime="20200926 15:48:20.364" endtime="20200926 15:48:20.378"></status>
+</kw>
+<status status="PASS" starttime="20200926 15:48:20.364" endtime="20200926 15:48:20.378"></status>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="teardown">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200926 03:24:24.330" endtime="20200926 03:24:26.597"></status>
+<status status="PASS" starttime="20200926 15:48:20.379" endtime="20200926 15:48:22.566"></status>
 </kw>
-<status status="PASS" starttime="20200926 03:24:14.572" endtime="20200926 03:24:26.598" critical="yes"></status>
+<status status="PASS" starttime="20200926 15:48:11.852" endtime="20200926 15:48:22.568" critical="yes"></status>
 </test>
 <doc>A test suite with a single test for valid add listing.
 
 This test has a workflow that is created using keywords in
 the imported resource file.</doc>
-<status status="PASS" starttime="20200926 03:23:51.892" endtime="20200926 03:24:26.606"></status>
+<status status="PASS" starttime="20200926 15:47:46.543" endtime="20200926 15:48:22.575"></status>
 </suite>
 <statistics>
 <total>

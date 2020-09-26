@@ -20,6 +20,7 @@ Valid Add Listing
     Input Price    200
     Input Condition    Good as New
     Submit Credentials Upload
+    Profile Should be Open
     [Teardown]    Close Browser
 
 Invalid Add Listing - invalid price
@@ -36,6 +37,7 @@ Invalid Add Listing - invalid price
     Input Price    Invalid
     Input Condition    Good as New
     Submit Credentials Upload
+    Listing Should be Open
     [Teardown]    Close Browser
 
 Invalid Add Listing - Skip Select Game Title
@@ -51,4 +53,5 @@ Invalid Add Listing - Skip Select Game Title
     Input Price    Invalid
     Input Condition    Good as New
     Submit Credentials Upload
+    Listing Should be Open
     [Teardown]    Close Browser
