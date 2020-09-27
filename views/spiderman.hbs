@@ -5,132 +5,209 @@
         <meta charset="UTF-8">
         
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-        
     </head>
     
     <body>
-        <div class="dashboard-container">
-            <div id="nav-bar">
-<!-----------------------NAVBAR JS----------------------------------->
-                <script>
-                    window.onscroll = function(){
-                        stickyBar()
-                    };
+                  <!-- The Modal -->
+        <div id="reviewModal" class="modal">
 
-                    var navbar = document.getElementById("nav-bar");
-                    var sticky = navbar.offsetTop;
-
-                    function stickyBar(){
-                        if(window.pageYOffset > sticky){
-                            navbar.classList.add("sticky")
-                        }else{
-                            navbar.classList.remove("sticky")
-                        }
-                    }
-                </script>
-<!-------------------------------------------------------------------->
-                <img src="/image/LOGO2.png" class="logo">
-                
-                <ul class="nav">
-                    <a href="/game/games" name="games">Games</a>
-                    <a href="/post/upload" name="upload">Upload</a>
-
-                    
-                    <div class="nav-right">
-                        <div class="search-container">
-                            <input class="search-box" type="text" name="search" placeholder=" Search..." >
-                            <a class="search-btn" href="#">
-                                <i class="fas fa-search"></i>
-                            </a>
-                        </div>
-                        <a href="/cart"><i class="fas fa-shopping-cart cart"></i></a>
-                        <a href="/user/profile" class="profile" name="system">Profile</a>
-                    </div>
-                </ul>
-   
-            </div>
-            
-            <div class="content-container">             
-                <div class="details-container">
-                    <div class="product-image-container">
-                        <img class="product-image" src="{{game.link}}">
-                    </div>
-                        
-                    <div class="product-container">
-                        <div class="product-name"><span>{{game.title}}</span></div>
-                        
-                        <div class="details">
-                            <span id="release-label">Released</span>
-                            <span id="release">{{game.release}}</span>
-                            <span id="genre-label">Genre</span>
-                            <span id="genre"><a href="#" style="color: #fd8f4b; font-family: ralewayregular" >{{game.genre}}</a></span>
-                        </div>
-                        
-                        <div class="rating-container">
-                            <div class="rating-label">Rating</div>
-                            <div class="rating">{{game.rating}}</div>
-                        </div>
-                        
-                        
-                        <a href="/post/available">    
-                            <div class="rent-button-ctnr">
-                                <div class="rent-button">Available for Rent</div>
-                            </div>
-                        </a>
-                        
-                        
-                    </div>
-
-                    
-                </div>
-                
-                <div class="body-container">
-                    
-                    <div class="description-container">
-                        <div class="description-label">Description</div>
-                        <p>{{game.description}}</p>
-                    </div>
-                    
-<!--
-                    <div class="available-label">Available for Rent</div>
-                        
-                        <div class="available-container">
-                            
-                            <div class="product" id="1">
-                                <img src="image/Spiderman/ps4.jpg" class="available-image">
-                                <div class="available-details">
-                                    <div class="product-title" >Marvel's Spider-Man</div>
-                                    <div class="price">₱500</div>
-                                    <a href="/rental"><div class="rent-button">
-                                        RENT
-                                        </div></a>
-                                </div>
-
-                            </div>
-                            
-                            <div class="product" id="2">
-                                <img src="image/Spiderman/ps4.jpg" class="available-image">
-                                <div class="available-details">
-                                    <div class="product-title">Marvel's Spider-Man</div>
-                                    <div class="price">₱700</div>
-                                     <a href="/rental2"><div class="rent-button">
-                                        RENT
-                                         </div></a>
-                                </div>
-
-                            </div>
-                            
-                        </div>
--->
-                    
-
-                </div>
-            </div>
-                
-                
-            
-
-                
+        <!-- Modal content -->
+        <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2 id="ownerTag"></h2>
         </div>
+        <div class="modal-body">
+            <div class ="review-container" id="reviewCont">
+                {{!-- {{#each reviews}}
+                <div class = "indiv-review">
+                    <div class = "review-content">
+                        {{review}} 
+                    </div>
+                    <div class = "review-author">
+                        by {{reviewerID}}
+                    </div>
+                </div>  
+            {{/each}} --}}
+            </div>
+        </div>
+        <div class="modal-footer">
+            <form id = "reviewForm" method="POST" action="/review/new-review">
+                <input type = "text" id = "review_text" class = "review_textbox" placeholder="Leave a review!" name="review">
+                <button id="reviewSubmit" class="rent_button">SUBMIT</button>
+                <input type="hidden" id="hiddenPostID" value="" name="postID">
+            </form>
+            
+        </div>
+        </div>
+
+        </div>
+
+        <div class="dashboard-container">
+            <!--NAVBAR-->
+            <div id="nav"></div>
+            <script>
+                $.get("/nav.html", function(data){
+                    $("#nav").replaceWith(data).stop();
+                });
+            </script>
+            <!--START-->
+            <h1 id="game_title"> {{temp.title}}</h1>         
+            <div class="details-container">
+                <div class="product-image-container">
+                    <img class="product-image" src="{{temp.link}}">
+                </div>
+                        
+                <div class="product-container">
+                    <div class="left_info">
+                        <div class="details">
+                            <span id="release-label"> Rating: </span>
+                            <span id="release">{{temp.rating}}</span>
+                        </div>
+                        <div class="details">
+                            <span id="release-label"> Console: </span>
+                            <span id="release">{{temp.platform}}</span>
+                        </div>
+                        <div class="details">
+                            <span id="release-label"> Genre: </span>
+                            <span id="release">{{temp.genre}}</span>
+                        </div>
+                        <div class="details">
+                            <span id="release-label">Released:</span>
+                            <span id="release">{{temp.release}}</span>
+                        </div>
+                        <div class="details">
+                            <span id="release-label">Views: </span>
+                            <span id="release">{{temp.clicks}} views</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="post-container">
+            {{#each posts}}
+            <div class="fix post_{{_id}}" id="post-item">
+                <h1 class="label_number"> {{@index}}</h1>
+                <div class="indiv_listing">
+                    <div class="details_lower">
+                        <div class="details">
+                            <span id="release-label"> Owner: </span>
+                            <span id="release" name="user"><a href="/user/pf/{{user}}">{{user}}</a></span>
+                        </div>
+                        <div class="details">
+                            <span id="release-label"> Region: </span>
+                            <span id="release" name="region">{{region}}</span>
+                        </div>
+                        <div class="details">
+                            <span id="release-label"> Condition: </span>
+                            <span id="release">{{description}}</span>
+                        </div>
+                        <input type="hidden" value="{{temp.title}}" name="title">
+                        <input type="hidden" value="{{temp.release}}" name="release">
+                    </div>
+                    <div class="details_lower">
+                        <div class="fix">
+                            <div id="release-label">Status:</div>
+                            <div class="important_info" id="release" name="status">{{status}}</div>
+                        </div>
+                        <div class="fix">
+                            <div id="release-label">Price:</div>
+                            <div class="important_info" id="release" name="price">{{price}}</div>
+                        </div>
+                        <div class="fix">
+                        <button class="check_reviews" data-id='{{_id}}' name="{{user}}">
+                            Check the Reviews!
+                        </button>
+                        </div>
+                    </div>
+                    <form class="details_lower" action="/cart/add-to-cart" method="POST">
+                        <div class="fix">   
+                            <input type="number" class="input_number" placeholder="3" name="duration">  
+                            <p class="days_display"> Days</p>
+                        </div>
+                        <button class="rent_button" type="submit">ADD TO CART</button>
+                        <input type="hidden" value="{{_id}}" name="postingID">
+                        <input type="hidden" value="{{temp._id}}" name="gameID">
+                        {{!-- <a href="/post/available">    
+                            <div class="rent_button">Available for Rent</div>
+                        </a> --}}  
+                        
+                    </form>
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
+
+        <script>
+            var modal = document.getElementById("reviewModal");
+            $(document).ready(function(){
+                if(!$('#post-item').length){
+                    $('.post-container').append('<div class="empty-label">No listings available.</div>')
+                }
+
+                $(".check_reviews").click(function(){
+                    let postID = $(this).attr("data-id")
+                    let owner = $(this).attr("name")
+                    document.getElementById("hiddenPostID").value = postID
+                    document.getElementById("ownerTag").innerHTML = owner
+                    console.log("PostID: " + postID)
+                    {{#each reviews}}
+                        if(postID == '{{postID}}'){
+                            $(".review-container").append('<div class="indiv-review">' +
+                                                                    '<div class="review-content">{{review}}</div>'+
+                                                                    '<div class="review-author"><a href="/user/pf/{{reviewerID}}">by {{reviewerID}}</a></div>'+
+                                                            '</div>').hide().show('fast')
+                        }
+                    {{/each}}
+                    modal.style.display = "block"
+                
+                })
+
+                $("#reviewSubmit").click(function(){
+        
+                    if(!$("#review_text").val().trim()){
+                        alert("Please input valid review!");
+                    }
+                    else{
+                        document.getElementById("reviewForm").submit()
+                        alert("Review submitted!");
+                    }
+                    
+                })
+
+            })
+            
+            //removing rented items
+            {{#each posts}}
+            var postID = '.post_{{_id}}'
+            var postStatus = '{{status}}'
+            if($(postID) && postStatus != 'Available'){
+                $(postID).remove();
+            }
+            {{/each}}
+                
+
+                // Get the button that opens the modal
+                var btns = document.querySelectorAll('.check_reviews');
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                modal.style.display = "none";
+                document.getElementById("reviewCont").innerHTML = ""
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                    document.getElementById("reviewCont").innerHTML = ""
+                }
+                }
+        </script>
     </body>
 </html>

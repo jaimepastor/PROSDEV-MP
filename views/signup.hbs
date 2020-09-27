@@ -1,43 +1,56 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="signup.css">
+        <script src="/jQuery.js"></script>
     </head>
 
     <body>
         <div class="bg">
             
-            <div class="bg-container">
-                <img src="image/bg2.jpg" id="bg-img">
-            </div>
-            
-            <div class="header">
-                <img src="image/LOGO2.png" id="head-logo">
+            <div id="nav-bar">
+                <div class="logocontainer"><img src="/image/LOGO2.png" class="logo"></div>
             </div>
             
             <div class="register-container"> 
-                <div class="register-container-bg"></div>
                 <div class="register-header">
                     <span class="register-header-label">Sign Up for Free!</span>
                 </div>
                 
-                <div class="username-label">Username</div>
-                <div class="email-label">Email</div>
-                <div class="password-label">Password</div>
                     <form action="user/register" method="post">
-                        <div class="username-input">
-                            <input class="username" type="text" name="username">
-                        </div>
+                        <div class="form-content">
+                            <div class="input-section">
+                                <div class="item-label">First Name</div>
+                                <div class="input-field-container" id="firstNameError"><input class="input-field" type="text" name="firstName"></div>
+                            </div>
 
-                        <div class="email-input">
-                            <input class="email" type="text" name="email">
-                        </div>
-                        
-                        <div class="password-input">
-                            <input class="password" type="password" name="password">
-                        </div>
+                            <div class="input-section">
+                                <div class="item-label">Last Name</div>
+                                <div class="input-field-container" id="lastNameError"><input class="input-field" type="text" name="lastName"></div>
+                            </div>
 
-                        <div class="login-button-container">
-                            <input type="submit" value="Register" class="subbutton login-button">
+                            <div class="input-section">
+                                <div class="item-label">Region</div>
+                                <div class="input-field-container" id="regionError"><input class="input-field" type="text" name="region"></div>
+                            </div>
+
+                            <div class="input-section">
+                                <div class="item-label">Email</div>
+                                <div class="input-field-container" id="emailError"><input class="input-field" type="text" name="email"></div>
+                            </div>
+
+                            <div class="input-section">
+                                <div class="item-label">Password</div>
+                                <div class="input-field-container" id="passwordError"><input class="input-field" type="password" name="password"></div>
+                            </div>
+
+                            <div class="input-section">
+                                <div class="item-label">Confirm Password</div>
+                                <div class="input-field-container" id="confirmPassError"><input class="input-field" type="password" name="confirmPass"></div>
+                            </div>
+
+                            <div class="login-button-container">
+                                <input type="submit" value="Register" class="subbutton login-button">
+                            </div>
                         </div>
                     </form>
                 
@@ -47,6 +60,15 @@
                 </div>
                 
             </div>
+            <script>
+                {{#each errors}}
+                    $('#{{container-id}}Error').append('<span class="tooltip-text">' + '{{message}}' + '</span>');
+                    $('input[name="{{container-id}}"]').css({"border-bottom": "2px solid #fd8f4b"});
+                {{/each}}
+                {{#each savedinput}}
+                    $('input[name="{{container-id}}"]').val('{{content}}')
+                {{/each}}
+            </script>
         </div>
     </body>
 </html>

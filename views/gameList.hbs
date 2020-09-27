@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/gameList.css">
+        <script src="/jQuery.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    </head>
+    
+    <body>
+        <div class="page-container">
+
+            <div id="nav"></div>
+            <script>
+                $.get("/nav.html", function(data){
+                    $("#nav").replaceWith(data).stop();
+                });
+            </script>
+            
+            <div class="content-container">                
+                <div class="games-container">
+                    <div class="search-container">
+                            <input type="text" class="search-bar" placeholder="Search..." value="">
+                            <a class="search-button-click" href=""><div class="search-button"></div></a>
+                    </div>
+                    <div class="header-title">
+                        <div class="headers"><span>Games</span></div>
+                    </div>
+                    <div class="filter-container">
+                        <span>Filter by:</span>
+                        <div class="select-container">
+                            <select class="select-menu" id="select-console">
+                                <option value="all">All Consoles</option>
+                                <option value="switch">Nintendo Switch</option>
+                                <option value="xbox">Xbox One</option>
+                                <option value="ps4">PS4</option>
+                            </select>
+                        </div>
+                        <div class="select-container">
+                            <select class="select-menu" id="select-genre">
+                                <option value="all">All Genres</option>
+                                <option>Action/Adventure</option>
+                                <option>Arcade/Puzzle</option>
+                                <option>Family/Party</option>
+                                <option>Fighting</option>
+                                <option>Music/Dance</option>
+                                <option>Racing</option>
+                                <option>RPG</option>
+                                <option>Shooter</option>
+                                <option>Sports</option>
+                                <option>Strategy</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="product-container">
+                        {{#each games}}
+                            <div class="product">
+                                <a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>
+                                <div class="details">
+                                    <div class="product-title">{{title}}</div>
+                                    <div class="release-date">Released {{release}}</div>
+                                    <a href="/game/vg/{{_id}}"><div class="rent-button">RENT</div></a>
+                                </div>
+                            </div>            
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            
+            <script>
+                function updateList(){
+                    var selectedConsole = $("#select-console").val();
+                    var selectedGenre = $("#select-genre").val();
+                    var searchTerm = $(".search-bar").val().toLowerCase();
+                    $(".product").remove();
+                    $(".noresult").remove();
+                    {{#each games}}
+                        if((selectedConsole === "all" || selectedConsole === "{{platform}}") && (selectedGenre === "all" || selectedGenre === "{{genre}}") && (searchTerm == "" || "{{title}}".toLowerCase().includes(searchTerm))){
+                           $(".product-container").append('<div class="product">' +
+                                                                '<a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>' +
+                                                                '<div class="details">' +
+                                                                    '<div class="product-title">{{title}}</div>' +
+                                                                    '<div class="release-date">Released{{release}}</div>' +
+                                                                    '<a href="/game/vg/{{_id}}""><div class="rent-button">RENT</div></a>' +
+                                                                '</div>' +
+                                                            '</div>').hide().show('fast');
+                        }
+                    {{/each}}
+                    if(!$(".product").length){
+                        $(".product-container").append('<div class = "noresult"> No results available. </div>').hide().show('fast');
+                    }
+                }
+                $(".select-menu").on('change', function(){updateList()});
+                $(".search-bar").on('keypress', function(e){
+                    if(e.which == 13) updateList()
+                });
+                $(".search-button-click").on('click', function(e){
+                    e.preventDefault()
+                    updateList()
+                })
+                
+            </script>
+        </div>
+    </body>
+</html>

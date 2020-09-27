@@ -2,139 +2,105 @@
     <head>
         <link rel="stylesheet" href="/add.css">
         <script src="/jQuery.js"></script>
-        
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     </head>
     
     <body>
         <div class="checkout-container">
-                        <div id="nav-bar">
-<!-----------------------NAVBAR JS----------------------------------->
-                <script>
-                    window.onscroll = function(){
-                        stickyBar()
-                    };
 
-                    var navbar = document.getElementById("nav-bar");
-                    var sticky = navbar.offsetTop;
-
-                    function stickyBar(){
-                        if(window.pageYOffset > sticky){
-                            navbar.classList.add("sticky")
-                        }else{
-                            navbar.classList.remove("sticky")
-                        }
-                    }
-                </script>
-<!-------------------------------------------------------------------->
-                <img src="/image/LOGO2.png" class="logo">
-                
-                <ul class="nav">
-                    <a href="/game/games" name="games">Games</a>
-                    <a href="/post/upload" name="upload">Upload</a>
-                    
-                    <div class="nav-right">
-                        <a href="/cart"><i class="fas fa-shopping-cart cart"></i></a>
-                        
-                        <div class="search-container">
-                            <input class="search-box" type="text" name="search" placeholder=" Search..." >
-                            <a class="search-btn" href="#">
-                                <i class="fas fa-search"></i>
-                            </a>
-                        </div>
-                        
-                        <a href="/user/profile" class="Profile" name="Profile">Profile</a>
-                    </div>
-                </ul>
-            </div>
-            
-            <div class="bg-container">
-                <img src="/image/bg2.jpg" id="bg-img">
-            </div>  
+            <div id="nav"></div>
+            <script>
+                $.get("/nav.html", function(data){
+                    $("#nav").replaceWith(data).stop();
+                });
+            </script>
             
             <div class="main-body">
-                <div class="main-body-bg"></div>
                 
                 <div class="checkout-header">
                     <span class="checkout-header-label">Add a New Game</span>
                 </div>
-                
-                    <div class="title-label">Title</div>
-                    <div class="platform-label">Platform</div>
-                    <div class="genre-label">Genre</div>
-                    <div class="description-label">Game Description</div>
-                    <div class="rating-label">Rating</div>
-                    <div class="release-label">Release Date</div>
-                    <div class="link-label">Link to Photo:</div>
-                
                         <form action="/game/add-game" method="post">
-                            <div class="title-input">
-                                <input class="title" type="text" name="title">
-                            </div>
-                            
-                            <div class="platform-input">
-                                <select class="platform" name="platform">
-                                    <option disabled selected value>Select Platform</option>
-                                    <option value="ps4">PS4</option>
-                                    <option value="xbox">Xbox One</option>
-                                    <option value="switch">Switch</option>
-                                </select>
-                            </div>
-                        
-                            <div class="genre-input">
-                                <select class="genre" type="text" name="genre">
-                                    <option disabled selected value>Select Genre</option>
-                                    <option>Action/Adventure</option>
-                                    <option>Arcade/Puzzle</option>
-                                    <option>Family/Party</option>
-                                    <option>Fighting</option>
-                                    <option>Music/Dance</option>
-                                    <option>Racing</option>
-                                    <option>RPG</option>
-                                    <option>Shooter</option>
-                                    <option>Sports</option>
-                                    <option>Strategy</option>
-                                </select>
-                            </div>
-                            
-                            <div class="description-input">
-                                <input class="description" type="text" name="description">
-                            </div>
+                            <div class="left-column">
+                                <div class="input-section">
+                                    <div class="item-label">Game Title</div>
+                                    <div class="input-field-container" id="titleError"><input class="input-field" type="text" name="title"></div>
+                                </div>
 
-                            <div class="rating-input">
-                                <select class="rating" type="text" name="rating">
-                                    <option disabled selected value >Select Rating</option>
-                                    <option>Adults</option>
-                                    <option>Childhood</option>
-                                    <option>Everyone</option>
-                                    <option>Everyone 10+</option>
-                                    <option>Mature 17+</option>
-                                    <option>Not Rated</option>
-                                    <option>Rating Pending</option>
-                                    <option>Teen</option>
-                                </select>
-                            </div>
+                                <div class="input-section">
+                                    <div class="item-label">Link to Image</div>
+                                    <div class="item-sub-label">Recommended image orientation is square</div>
+                                    <div class="input-field-container" id="linkError"><input class="input-field" type="text" name="link"></div>
+                                </div>
 
-                            <div class="release-input">
-                                <input class="release" type="date" name="release">
+                                <div class="input-section">
+                                    <div class="item-label">Release Date</div>
+                                    <div class="input-field-container" id="releaseError"><input class="input-field" type="date" name="release"></div>
+                                </div>
                             </div>
                             
-                            <div class="link-input">
-                                <input class="link" type="text" name="link">
+                            <div class="right-column">
+                                <div class="input-section">
+                                    <div class="input-field-container" id="ratingError">
+                                        <select class="dropdown-field" type="text" name="rating">
+                                            <option disabled selected value >Rating</option>
+                                            <option>Adults</option>
+                                            <option>Childhood</option>
+                                            <option>Everyone</option>
+                                            <option>Everyone 10+</option>
+                                            <option>Mature 17+</option>
+                                            <option>Not Rated</option>
+                                            <option>Rating Pending</option>
+                                            <option>Teen</option>
+                                        </select>
+                                    </div>
+                                </div>     
+
+                                <div class="input-section">
+                                    <div class="input-field-container" id="platformError">
+                                        <select class="dropdown-field" name="platform">
+                                            <option disabled selected value>Console</option>
+                                            <option value="ps4">PS4</option>
+                                            <option value="xbox">Xbox One</option>
+                                            <option value="switch">Switch</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="input-section">
+                                    <div class="input-field-container" id="genreError">
+                                        <select class="dropdown-field" type="text" name="genre">
+                                            <option disabled selected value>Genre</option>
+                                            <option>Action/Adventure</option>
+                                            <option>Arcade/Puzzle</option>
+                                            <option>Family/Party</option>
+                                            <option>Fighting</option>
+                                            <option>Music/Dance</option>
+                                            <option>Racing</option>
+                                            <option>RPG</option>
+                                            <option>Shooter</option>
+                                            <option>Sports</option>
+                                            <option>Strategy</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="add-button-container">
                                 <input type="submit" value="Add" class="add">
                             </div>
+                            <div class="cancel-button-container"><a href="/post/upload/" class="cancel-link">Cancel</a></div>
                         </form>
-            
-<!--
-                <div class="back">
-                    <a href="/cart" class="back-link">Back to Shipment</a>
-                </div>
--->
-<!--                </div>-->
             </div>
+            <script>
+                {{#each errors}}
+                    $('#{{container-id}}Error').append('<span class="tooltip-text">' + '{{message}}' + '</span>');
+                    $('[name="{{container-id}}"]').css({"border-bottom": "2px solid #fd8f4b"});
+                {{/each}}
+                {{#each savedinput}}
+                    $('[name="{{container-id}}"]').val('{{content}}')
+                {{/each}}
+            </script>
         </div>
     </body>
 </html>

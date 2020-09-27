@@ -155,7 +155,7 @@
 
 .rent-button{
     height: 37px;
-    width: 75px;
+    width: 150px;
     background-color:#fd8f4b;
     padding: 5px;
     color: white;
@@ -178,10 +178,29 @@
 }
 
 .listing-header{
-    margin-top: 100px;
-    margin-left: 33px;
+    margin-top: 55px;
+    margin-left: 20px;
     margin-right: 20px;
     overflow: hidden;
+}
+
+.listing-button{
+    height: 30px;
+    width: 300px;
+    background-color:#fd8f4b;
+    padding: 5px;
+    color: white;
+    font-family: ralewayregular;
+    text-align: center;
+    line-height: 30px;
+    border-style: none;
+    border-radius: 3px;
+    float: right;
+}
+
+.listing-button:hover{
+    background-color: #f66d18;
+    cursor: pointer;
 }
 
 .product-title{
@@ -215,32 +234,18 @@
     flex-grow: 1;
 }
 
-
-a{
-    text-decoration: none;
-}
-
 .history-button{
     height: 30px;
     width: 300px;
     background-color:#fd8f4b;
-    padding: 5px; 
-    border-style: none;
-    border-radius: 3px;
+    padding: 5px;
     color: white;
     font-family: ralewayregular;
     text-align: center;
     line-height: 30px;
-    margin-left: 5px; 
-    margin-right: 5px;
-    /* margin-bottom: 10px; */
-    margin-top: 10px;
-    float:left;
-}
-
-.history-button:hover{
-    background-color: #f66d18;
-    cursor: pointer;
+    border-style: none;
+    border-radius: 3px;
+    float: right;
 }
 
 .buttons{
@@ -253,6 +258,41 @@ a{
     align-content: center;
     vertical-align: middle;
     margin: auto;
+}
+
+.fix{
+    margin-left: 25px;
+    display: flex;
+}
+
+.input_number{
+    width: 30px;
+    height: 100%;
+    font-family: ralewayregular;
+    border: none;
+    background-color: #fd8f4b;
+    color: black;
+    text-align: center;
+    font-size: 100%;
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 5px;
+}
+
+.input_number:focus{
+    outline: none;
+    font-size: large;
+}
+
+.days_divide{
+    display: flex;
+}
+
+.days_display{
+    color: white;
+    font-family: ralewayregular;
+    font-size: large;
+    margin-left: 2%;
 }
 
 /*SCROLLBARS*/

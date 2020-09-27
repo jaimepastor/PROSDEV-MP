@@ -1,0 +1,162 @@
+#nav-bar{
+    height: 5em;
+    background-color: #373737;
+    overflow: hidden;
+    padding: 0 20px;
+    color: white;
+    position: relative;
+    z-index: 99;
+}
+
+.logocontainer{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2.5em;
+    float: left;
+    padding-right: 2.1875em;
+}
+
+.menucontainer{
+    float: right;
+    line-height: 80px;
+    padding-top: 10px;
+}
+
+.logo{
+    height: 2.5em;
+}
+
+.nav{
+    line-height: 5em;
+    
+}
+
+.nav a{
+    font-family: ralewayregular;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    padding: 0 10px;
+    transition: 0.4s;
+}
+
+.nav a:hover{
+    color: #fd8f4b;
+}
+
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky + .content-container{
+    padding-top: 80px;
+}
+
+.modal-container{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    padding-top: 10em;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content{
+    background-color: #707070;
+    margin: auto;
+    padding: 20px;
+    width: 50%;
+}
+
+.welcome-container{
+    display: table;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.welcome-text-container{
+    display: inline-block;
+    height: 2.5em;
+    margin-right: 10px;
+}
+
+.welcome-text{
+    font-size: 30px;
+}
+
+.modal-logo{
+    display: inline-block;
+}
+
+.welcome-description{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.modal-button-container{
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.modal-learn-more{
+    height: 20px;
+    width: 150px;
+    background-color:#fd8f4b;
+    padding: 5px;
+    color: white;
+    font-family: ralewayregular;
+    text-align: center;
+    align-content: center;
+    display: inline-block;
+    line-height: 20px;
+    margin-top: 5px;
+    border-style: none;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+.modal-learn-more:hover{
+    background-color: #f66d18;
+    cursor: pointer;
+}
+
+.modal-cancel{
+    height: 20px;
+    width: 150px;
+    background-color: lightgray;
+    padding: 5px;
+    color: white;
+    font-family: ralewayregular;
+    text-align: center;
+    align-content: center;
+    display: inline-block;
+    line-height: 20px;
+    margin-top: 5px;
+    border-style: none;
+    border-radius: 3px;
+}
+
+.modal-cancel:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+.guide-content{
+    width: 50%;
+    margin: auto;
+    background-color: rgba(0,0,0,0.8);
+    padding: 20px;
+}
+
+.guide-section{
+    margin-bottom: 20px;
+}

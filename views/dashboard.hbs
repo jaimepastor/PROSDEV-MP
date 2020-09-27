@@ -2,214 +2,112 @@
     <head>
         <link rel="stylesheet" href="/dashboard.css">
         <script src="/jQuery.js"></script>
-        {{!-- <meta charset="UTF-8"> --}}
-        
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-        
-<!-----------------------JAVASCRIPT----------------------------------->
-        <script>
-        
-            onload = start;
-            
-            function start(){
-                var i = 1;
-                
-                function Move(){
-                    i = (i%3)+1;
-                    
-                    document.getElementById('i'+i).checked = true;
-                }
-                
-                setInterval(Move,4000);
-            }
-            
-        </script>
-<!-------------------------------------------------------------------->
-        
     </head>
     
     <body>
         <div class="dashboard-container">
-            <div id="nav-bar">
-<!-----------------------NAVBAR JS----------------------------------->
-                <script>
-                    window.onscroll = function(){
-                        stickyBar()
-                    };
 
-                    var navbar = document.getElementById("nav-bar");
-                    var sticky = navbar.offsetTop;
-
-                    function stickyBar(){
-                        if(window.pageYOffset > sticky){
-                            navbar.classList.add("sticky")
-                        }else{
-                            navbar.classList.remove("sticky")
-                        }
-                    }
-                </script>
-<!-------------------------------------------------------------------->
-                <img src="/image/LOGO2.png" class="logo">
-                
-                <ul class="nav">
-                    <a href="/game/games" name="games">Games</a>
-                    <a href="/post/upload" name="upload">Upload</a>
-                    
-                    <div class="nav-right">
-                        <div class="search-container">
-                            <input class="search-box" type="text" name="search" placeholder=" Search..." >
-                            <a class="search-btn" href="#">
-                                <i class="fas fa-search"></i>
-                            </a>
-                        </div>
-                        <a href="/cart"><i class="fas fa-shopping-cart cart"></i></a>
-                        <a href="/user/profile" class="profile" name="profile">Profile</a>
-                    </div>
-                </ul>
-   
-            </div>
+            <div id="nav"></div>
+            <script>
+                $.get("/nav.html", function(data){
+                    $("#nav").replaceWith(data).stop();
+                });
+            </script>
             
-            <div class="content-container">
-                <div class="image-slider">
-                    <input type="radio" name="images" id="i1" checked>
-                    <input type="radio" name="images" id="i2">
-                    <input type="radio" name="images" id="i3">
-                    
-                    
-                    <div class="image-s" id="one">
-                        <img src="/image/image1.jpeg">
-                        
-                        <label for="i3" class="prev"><span></span></label>
-                        <label for="i2" class="next"><span></span></label>
-                    </div>
-                    
-                    <div class="image-s" id="two">
-                        <img src="/image/image2.jpg">
-                        
-                        <label for="i1" class="prev"><span></span></label>
-                        <label for="i3" class="next"><span></span></label>
-                    </div>
-                    
-                    <div class="image-s" id="three">
-                        <img src="/image/image3.jpg">
-                        
-                        <label for="i2" class="prev"><span></span></label>
-                        <label for="i1" class="next"><span></span></label>
-                    </div>
-                    
-                    <div class="slide-buttons">
-                        <label class="dots" id="dot1" for="i1"></label>
-                        <label class="dots" id="dot2" for="i2"></label>
-                        <label class="dots" id="dot3" for="i3"></label>
-                    </div>
-                    
-                </div>
-                
+            <div class="content-container">                
                 <div class="games-container">
-                    {{!-- <div class="all-platforms-container">
-                        <span id="ps4"><a href="/system">PlayStation 4</a></span>
-                        <span id="xbox"><a href="/xbox">XBOX</a></span>
-                        <span id="switch"><a href="/switch">Nintendo Switch</a></span>
-                        
-                    </div> --}}
-                    
-                    <div class="label">
-                        All Platforms Games
-                        
-                        <div class="choosing">
-                            <div class="systems-container">
-                                <div class="systems-options-label">Systems</div>
-
-                                <form>
-                                    <select class="systems-options" id="systems-options" onchange="getSelectValue()">
-                                        <option disabled selected value>Select Platform</option>
-                                        <option value="allplatforms">All Platforms</option>
-                                        <option value="ps4">PlayStation 4</option>
-                                        <option value="xbox">XBOX ONE</option>
-                                        <option value="switch">Nintendo Switch</option>
-                                    </select>
-                                </form>
-                                
-                            </div>
-                            
-                            
-                        
-                        <div class="genre-container">
-                            <div class="genre-options-label">Genres</div>
-                            <form>
-                                <select class="genre-options" id="genre-options" onchange="getSelectValue()">
-                                    <option disabled selected value>Select Genre</option>
-                                    <option value="actionadventure">Action/Adventure</option>
-                                    <option value="arcadepuzzle">Arcade/Puzzle</option>
-                                    <option value="familyparty">Family/Party</option>
-                                    <option value="fighting">Fighting</option>
-                                    <option value="musicdance">Music/Dance</option>
-                                    <option value="racing">Racing</option>
-                                    <option value="rpg">RPG</option>
-                                    <option value="shooter">Shooter</option>
-                                    <option value="sports">Sports</option>
-                                    <option value="strat">Strategy</option>
-
-                                </select>
-                            </form>
-                                
-                            </div>
-                        </div>
+                    <div class="search-container">
+                        <select class="search-type">
+                            <option>Games</option>
+                            <option>Users</option>
+                        </select>
+                        <input type="text" class="search-bar" placeholder="Search..." value="">
+                        <a class="search-button-click" href=""><div class="search-button"></div></a>
                     </div>
-
+                    <div class="headers" id="search-results-label">Search Results</div>
+                    <div class="search-results"></div>
 <!---------------------------------------------------------MOST POPULAR--------------------------------------------------------->
                     <div class="header-title">
                         <div class="headers"><span>Most Popular</span></div>
-                        <div class="see-all"><a href="allmostpopular.html">See All</a></div>
                     </div>
-                    
-                    
-                    
                     <div class="popular-games">
                         
                         {{#each games}}
-                            {{!-- {{#if @index '<' 4}} --}}
-                                <div class="product">
-                                    <a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>
-                            
-                                    <div class="details">
-                                        <div class="product-title">{{title}}</div>
-                                        <div class="release-date">Released {{release}}</div>
-                                        <a href="/post/available"><div class="rent-button">
-                                        RENT</div></a>
-                                    </div>
-                                </div>    
-                            {{!-- {{/if}} --}}
+                            <div class="product">
+                                <a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>
+                                <div class="details">
+                                    <div class="product-title">{{title}}</div>
+                                    <div class="release-date">Released {{release}}</div>
+                                    <a href="/game/vg/{{_id}}"><div class="rent-button">
+                                    RENT</div></a>
+                                </div>
+                            </div>            
                         {{/each}}
                     </div>
-<!----------------------------------------------------------------------------------------->
+<!--------------------------------------------------------RECENT RELEASES------------------------------------------------------>
                     <div class="header-title">
                         <div class="headers"><span>Recent Releases</span></div>
-                        <div class="see-all"><a href="allrecentreleases.html">See All</a></div>
                     </div>
-                    
-                    
-                    
                     <div class="recent-releases">
                         {{#each games}}
-                            {{!-- {{#if @index '<' 4}} --}}
                                 <div class="product">
                                     <a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>
-                            
                                     <div class="details">
                                         <div class="product-title">{{title}}</div>
                                         <div class="release-date">Released {{release}}</div>
-                                        <a href="/post/available"><div class="rent-button">
+                                        <a href="/game/vg/{{_id}}"><div class="rent-button">
                                         RENT</div></a>
                                     </div>
                                 </div>    
-                            {{!-- {{/if}} --}}
                         {{/each}}
                     </div>
-                    
                 </div>
-                
             </div>
+            
+            <script>
+                function updateList(){
+                    var searchTerm = $(".search-bar").val().toLowerCase();
+                    var searchType = $(".search-type").val()
+                    $(".search-results").empty();
+                    $("#search-results-label").css('visibility', 'visible');
+                    if(searchType === "Games"){
+                        {{#each games}}
+                            if(searchTerm != "" && "{{title}}".toLowerCase().includes(searchTerm)){
+                               $(".search-results").append('<div class="product">' +
+                                                                    '<a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>' +
+                                                                    '<div class="details">' +
+                                                                        '<div class="product-title">{{title}}</div>' +
+                                                                        '<div class="release-date">Released{{release}}</div>' +
+                                                                        '<a href="/game/vg/{{_id}}""><div class="rent-button">RENT</div></a>' +
+                                                                    '</div>' +
+                                                                '</div>').hide().show('fast');
+                            }
+                        {{/each}}
+                    }
+                    else if(searchType === "Users"){
+                        {{#each users}}
+                            if(searchTerm != "" && ("{{firstName}}".toLowerCase().includes(searchTerm) || "{{lastName}}".toLowerCase().includes(searchTerm))){
+                                var fullName = '{{firstName}} {{lastName}}'
+                                $(".search-results").append('<div class="user">' +
+                                                                '<div class="user-name"><a href="/user/pf/{{email}}">' + fullName + '</a></div>' +
+                                                                '<div class="user-region">{{region}}</div>' +
+                                                            '</div>')
+                            }
+                        {{/each}}
+                    }
+                    if(!$(".search-results").children().length){
+                        $(".search-results").append('<div class = "noresult"> No results available. </div>').hide().show('fast');
+                    }
+                }
+                $(".search-bar").on('keypress', function(e){
+                    if(e.which == 13) updateList()
+                });
+                $(".search-button-click").on('click', function(e){
+                    e.preventDefault()
+                    updateList()
+                })
+            </script>
         </div>
     </body>
 </html>

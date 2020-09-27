@@ -2,8 +2,13 @@ const mongoose = require("mongoose")
 
 var cartSchema = mongoose.Schema({
     title: String,
-    price: Number,
-    link: String
+    price: Number, //change to duration
+    link: String,
+    user: String,
+    borrower: String,
+    release: Date,
+    duration: Number,
+    ID: String
 })
 
 var Cart = mongoose.model("cart", cartSchema)
@@ -14,8 +19,8 @@ exports.add = function(cart){
 
         c.save().then((newCart)=>{
             console.log(newCart)
-            resolve(newGame)
-        }, (err)={
+            resolve(newCart)
+        }, (err)=>{
             reject(err)
         })
     })
@@ -40,3 +45,12 @@ exports.getAll = function(){
       })
     })
   }
+
+exports.deleteAll = function(){
+    return new Promise(function(resolve, reject){
+        Cart.deleteMany({}).then(()=>{
+        }, (err)=>{
+            reject(err)
+        })
+    })
+}

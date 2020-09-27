@@ -34,3 +34,44 @@ exports.get = function(id){
         })
     })
 }
+
+exports.getAll = function(){
+    return new Promise(function(resolve, reject){
+        Post.find().then((posts)=>{
+          resolve(posts)
+        }, (err)=>{
+          reject(err)
+        })
+      })
+}
+
+exports.getAllPosting = function(title){
+    return new Promise(function(resolve, reject){
+        Post.find({title:title}).then((posts)=>{
+            resolve(posts)
+        }, (err)=>{
+            reject(err)
+        })
+    })
+}
+
+exports.delete = function (id){
+    return new Promise(function(resolve, reject){
+        Post.deleteOne({_id: id
+        }).then((post)=>{
+            console.log("Deleted: ",  post)
+        },(err)=>{
+            reject(err)
+        })
+    })
+}
+
+exports.edit = function(id, post){
+    return new Promise(function(resolve, reject){
+        Post.findOneAndUpdate({_id:id}, post).then((post)=>{
+            resolve(post)
+        }, (err)=>{
+            reject(err)
+        })
+    })
+}

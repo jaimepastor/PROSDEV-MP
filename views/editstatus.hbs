@@ -17,46 +17,52 @@
             
             <div class="main-body">
                 <div class="checkout-header">
-                    <span class="checkout-header-label">Add a Listing</span>
+                    <span class="checkout-header-label">Edit Listing</span>
                 </div>
-                        <form action="new-post" method="post">
+                        <form action="/post/edit/edit-status" method="post">
+                            <input type="hidden" name="id" value="{{post._id}}">
+                            <input type="hidden" name="price" value="{{post.price}}">
+                            <input type="hidden" name="description" value="{{post.description}}">
                             <div class="left-column">
                                 <div class="input-section">
                                     <div class="input-field-container" id="titleError">
-                                        <select class="dropdown-field" name="title">
-                                            <option disabled selected value>Game</option>
-                                            {{#each games}}
-                                                <option>{{title}}</option>
-                                            {{/each}}
-                                        </select>
-                                    </div>
-                                    <div class="item-sub">Is your game not on our database? 
-                                        <a class="item-sub-link" href="/game/new-game">Click here to add it now!</a>
+                                        {{!-- <select class="dropdown-field" name="title">
+                                            <option>{{post.title}}</option>
+                                        </select> --}}
+                                        <div class="item-display">{{post.title}}</div>
                                     </div>
                                 </div>
 
                                 <div class="input-section">
                                         <div class="item-label">Price</div>
-                                        <span class="item-label">Php </span>
-                                        <div class="input-field-container" id="priceError"><input class="price-field" type="number" name="price" value="0"></div>
+                                        <span class="item-label">Php {{post.price}}</span>
                                         <span class="item-label"> /day</span>
                                 </div>
                                 
                                 <div class="input-section">
                                     <div class="item-label">Condition</div>
-                                    <div class="input-field-container" id="descriptionError"><textarea class="description-field" name="description"></textarea></div>
+                                    <div class="input-field-container" id="descriptionError"><span class="description-field">{{post.description}}</span></div>
                                 </div>
                             </div>
                             
                             <div class="right-column">
                                 <div class="input-section">
                                     <div class="item-label">Status</div>
-                                    <div class="item-display">Available</div>
+                                    {{!-- <div class="item-display">Available</div> --}}
+                                    <div class="input-field-container" id="titleError">
+                                        <select id = "status-dropdown" class="dropdown-field" name="status">
+                                            <option value= "Available">Available</option>
+                                            <option value = "Returned">Returned</option>
+                                            <option value = "Rented">Rented</option>
+
+                                        </select>
+                                    </div>
+                                    
                                 </div>
                                 
                                 <div class="input-section">
                                     <div class="item-label">Region</div>
-                                    <div class="item-display">{{user.region}}</div>
+                                    <div class="item-display" name="region">{{user.region}}</div>
                                 </div>
                                 
                                 <div class="input-section">
@@ -67,7 +73,7 @@
                             </div>
                             
                             <div class="checkout-button-container">
-                                <input type="submit" value="Upload" class="upload">
+                                <input type="submit" value="Edit" class="upload">
                             </div>
                     </form>
             
@@ -80,6 +86,17 @@
                 {{#each savedinput}}
                     $('[name="{{container-id}}"]').val('{{content}}')
                 {{/each}}
+
+                function setSelectedIndex(s, valsearch){
+                    for (i = 0; i< s.options.length; i++){ 
+                        if (s.options[i].value == valsearch){
+                            s.options[i].selected = true;
+                            break;
+                        }
+                    }
+                    return;
+                }
+                setSelectedIndex(document.getElementById("status-dropdown"),"{{post.status}}");
             </script>
         </div>
     </body>

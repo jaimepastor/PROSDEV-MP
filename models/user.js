@@ -2,7 +2,9 @@ const mongoose = require("mongoose")
 const crypto = require("crypto")
  
 var userSchema = mongoose.Schema({
-    username: String,
+    firstName: String,
+    lastName: String,
+    region: String,
     password: String,
     email: String
 })
@@ -30,9 +32,9 @@ exports.create = function(user){
 
 exports.authenticate = function(user){
     return new Promise(function(resolve, reject){
-        console.log("in promise: " + user.username)
+        console.log("in promise: " + user.email)
         User.findOne({
-            username : user.username,
+            email : user.email,
             password: crypto.createHash("md5").update(user.password).digest("hex")
         }).then((user)=>{
             console.log("callback user : " + user)
@@ -53,9 +55,20 @@ exports.get = function(id){
   })
 }
 
-exports.getUser = function(username){
+exports.getAll = function(){
     return new Promise(function(resolve, reject){
-      User.findOne({username:username}).then((user)=>{
+      User.find().then((users)=>{
+        resolve(users)
+      }, (err)=>{
+        reject(err)
+      })
+    })
+  }
+
+
+exports.getUser = function(email){
+    return new Promise(function(resolve, reject){
+      User.findOne({email:email}).then((user)=>{
         resolve(user)
       }, (err)=>{
         reject(err)

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" href="/profile.css">
+        <link rel="stylesheet" href="/viewProfile.css">
         <script src="/jQuery.js"></script>
         {{!-- <meta charset="UTF-8"> --}}
         
@@ -28,21 +28,10 @@
                             <div class="email-container">
                                 <div class="email-label">Email:</div>
                                 <div class="email">{{newUser.email}}</div>
-                                
                             </div>
-                            {{!-- <div class = "button-group"> --}}
-                                <a href="/post/upload"><div class="history-button">ADD LISTING</div></a>
-                                <a href= "/history/return-games"><div class="history-button">RETURN GAMES</div></a>
-                                <a href="/history/history"><div class="history-button">CHECK HISTORY</div></a>
-                                <a href="/history/rented-games"><div class="history-button">RENTED GAMES</div></a>
-                            
                         </div>
                     </div>
                     <div class="listing-container"> 
-                        <ul class="listing-header">
-                            <div class="listing-label">Listings</div>
-                           
-                        </ul>
                         <div class="listing-items"></div>
                     </div>
                 </div>
@@ -63,15 +52,15 @@
                                                                 '<div class="details">' +
                                                                     '<div class="product-title">{{title}}</div>' +
                                                                     '<div class="release-date">Status: {{status}}</div>' +
-                                                                    '<div class="release-date">Rating: {{rating}}</div>' +
                                                                     '<div class="release-date">P{{price}}</div>' +
-                                                                    '<div class = "buttons">'+
-                                                                    '<a href="/post/edit/{{_id}}"><div class="rent-button" style="height: 27px">EDIT</div></a>' +
-                                                                    '<form id = "deleteForm" action="/post/deleteListing" method ="POST">' +
-                                                                    '<input type= "hidden" value ="{{_id}}" name ="id">'+
-                                                                    '<button id = "deleteButton" name = "{{status}}" class="rent-button"<div class="button">DELETE</div></button>' +
+                                                                    '<form action="/cart/add-to-cart" method="POST">' +
+                                                                    '<div class="fix">' +
+                                                                        '<input type="number" class="input_number" placeholder="3" name="duration">' +
+                                                                        '<p class="days_display"> Days</p>' +
+                                                                    '</div>' +
+                                                                    '<button class="rent-button">ADD TO CART</button>' +
+                                                                    '<input type="hidden" value="{{_id}}" name="postingID">' +
                                                                     '</form>' +
-                                                                    '</div>'+
                                                                 '</div>' +
                                                             '</div>').hide().show('fast');
                         }
@@ -86,22 +75,6 @@
                             $('[id="'+ gameimgid +'"]').append('<a href="/game/vg/{{_id}}"><img src="{{link}}" class="product-image"></a>');
                         {{/each}}
                     }
-                
-                    $(document).on('click', '#deleteButton', function(event){
-                        var temp = $(this).attr("name")
-                        console.log(temp)
-                        if(temp == "Available"){
-                            event.preventDefault()
-                            if(confirm('Are you sure you want to delete this listing?')){
-                                document.getElementById("deleteForm").submit()
-                            }
-                            
-                        }
-                        else{
-                            event.preventDefault()
-                                alert("Video game is currently being rented")                            
-                        }
-                })
                     
                     
                 });
@@ -112,4 +85,3 @@
         </div>
     </body>
 </html>
-

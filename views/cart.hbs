@@ -1,80 +1,77 @@
 <html>
     <head>
         <link rel="stylesheet" href="/cart.css">
-        <script src="jQuery.js"></script>
+        <script src="/jQuery.js"></script>
         
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     </head>
     
     <body>
         <div class="cart-container">
-            <div id="nav-bar">
-<!-----------------------NAVBAR JS----------------------------------->
-                <script>
-                    window.onscroll = function(){
-                        stickyBar()
-                    };
-
-                    var navbar = document.getElementById("nav-bar");
-                    var sticky = navbar.offsetTop;
-
-                    function stickyBar(){
-                        if(window.pageYOffset > sticky){
-                            navbar.classList.add("sticky")
-                        }else{
-                            navbar.classList.remove("sticky")
-                        }
-                    }
-                </script>
-<!-------------------------------------------------------------------->
-                <img src="image/LOGO2.png" class="logo">
-                
-                <ul class="nav">
-                    <a href="/games" name="games">Games</a>
-                    <a href="/upload" name="upload">Upload</a>
-                    
-                    <div class="nav-right">
-                        <div class="search-container">
-                            <input class="search-box" type="text" name="search" placeholder=" Search..." >
-                            <a class="search-btn" href="#">
-                                <i class="fas fa-search"></i>
-                            </a>
-                        </div>
-                        <a href="/cart"><i class="fas fa-shopping-cart cart"></i></a>
-                        <a href="/user/profile" class="profile" name="profile">Profile</a>
-                    </div>
-                </ul>
-            </div>
+            <div id="nav"></div>
+            <script>
+                $.get("/nav.html", function(data){
+                    $("#nav").replaceWith(data).stop();
+                });
+            </script>
             
-            <div class="bg-container">
-                <img src="image/bg2.jpg" id="bg-img">
-            </div>  
-            
-            <div class="main-body">
-                <div class="main-body-bg"></div>
-                
+            <div class="content-container">
                 <div class="cart-header">
                     <span class="cart-header-label">My Cart</span>
                 </div>
-                
                 <div class="table-header">
-                    <span class="sTitle">TITLE</span> 
-                    <span class="sCost">COST</span>
-                </div>
-                        
-                <div class="product-container">
-                    <div class="product">
-                        <a class="pTitle" href="/rental">Spiderman PS4</a>
-                        <span class="pCost">500</span>
+                    <div class="product-pricing">
+                        <div class="pricing-content">Duration </div>
+                        <div class="pricing-content">Price</div>
+                        <div class="pricing-content">Total Price</div>
                     </div>
                 </div>
-                    
-                <form action="shipping">
-                    <div>
-                        <input type="submit" class="checkout" value="Checkout">
-                    </div>
-                </form>
+                <div class="product-container"></div>
+                <div class="checkout-container">
+                    <form action="/history/newHistory" method="POST">
+                        <button type="submit" class="checkout" onclick="alert('Checkout Successful!')">Checkout</button>
+                    </form>
+                    <div class="subtotal"></div>
+                </div>
             </div>
         </div>
+        <script>
+            $(document).ready(function(){
+                var userstr = '{{cartowner}}'
+                var subtotal = 0
+                {{#each items}}
+                var borrower = '{{borrower}}'
+                var title = '{{title}}'
+                var link = '{{link}}'
+                var release = '{{release}}'
+                release = release.split('08:00:00')[0];
+                var user = '{{user}}'
+                var duration = '{{duration}}'
+                var price = '{{price}}'
+                var total = {{duration}} * {{price}}
+                if(userstr === borrower){
+                    subtotal = subtotal + total;
+                    $('.product-container').append('<div class="product">' +
+                                                        '<div class="product-info">' +
+                                                            '<div class="img-container">' +
+                                                                '<img class="product-img" src="' + link + '">' +
+                                                            '</div>' +
+                                                            '<div class="product-details">' +
+                                                                '<div class="product-title">' + title + '</div>' +
+                                                                '<div class="product-date">Released ' + release + '</div>' +
+                                                                '<div class="product-owner">Owned by ' + user + '</div>' +
+                                                            '</div>' +
+                                                        '</div>' +
+                                                        '<div class="product-pricing">' +
+                                                            '<div class="pricing-content">' + duration + ' days</div>' +
+                                                            '<div class="pricing-content">Php ' + price + '</div>' +
+                                                            '<div class="pricing-content">Php ' + total + '</div>' +
+                                                        '</div>' +
+                                                    '</div>')
+                }
+                {{/each}}
+                $('.subtotal').append('Subtotal: Php ' + subtotal);
+            })
+        </script>
     </body>
 </html>

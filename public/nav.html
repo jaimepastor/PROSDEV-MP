@@ -1,0 +1,106 @@
+<link rel="stylesheet" href="/nav.css">
+<div id="nav-bar">
+<!-----------------------NAVBAR JS----------------------------------->
+    <script>
+        window.onscroll = function(){
+            stickyBar()
+        };
+
+        var navbar = document.getElementById("nav-bar");
+        var sticky = navbar.offsetTop;
+
+        function stickyBar(){
+            if(window.pageYOffset > sticky){
+                navbar.classList.add("sticky")
+            }else{
+                navbar.classList.remove("sticky")
+            }
+        }
+    </script>
+<!-------------------------------------------------------------------->
+    <div class="logocontainer"><a href="/game/games"><img src="/image/LOGO2.png" class="logo"></a></div>
+                
+    <div class="menucontainer">
+        <ul class="nav">              
+                <a href="/game/games" name="games">Home</a>
+                <a href="/game/gamelist" name="games">Games</a>
+                <a href="" name="help-button" id="help-button">Help</a>
+                <a href="/cart/" name="games">My Cart</a>
+<!--                <a href="/post/upload" name="upload">Upload</a>------------------Keeping this here for debug--------------->
+                <a href="/user/profile" class="profile" name="profile">Profile</a>
+                <a href="/logout" name="games">Logout</a>
+        </ul>
+    </div>
+    <div class="modal-container" id="help-confirm-modal">
+        <div class="modal-content">
+            <div class="welcome-container">
+                <div class="welcome-text-container">
+                    <div class="welcome-text">Welcome to</div>
+                </div>
+                <div class="modal-logo"><img src="/image/LOGO2.png" class="logo"></div>
+            </div>
+            <div class="welcome-description">Make the most out of your video game renting experience!</div>
+            <div class="modal-button-container">
+                <a><div class="modal-learn-more" id="modal-learn-more">LEARN MORE</div></a>
+                <a><div class="modal-cancel" id="modal-cancel">CANCEL</div></a>
+            </div>
+        </div>
+    </div>
+    <div class="modal-container" id="guide-modal">
+        <div class="guide-content">
+            <div class="guide-section">
+                <div>Home</div>
+                <div>Check the most popular video games available and the latest releases we have!</div>
+            </div>
+            <div class="guide-section">
+                <div>Games</div>
+                <div>Browse through all the video games listings available!</div>
+            </div>
+            <div class="guide-section">
+                <div>Help</div>
+                <div>Learn on how to navigate through the website!</div>
+            </div>
+            <div class="guide-section">
+                <div>My Cart</div>
+                <div>Checkout all the games you want to rent!</div>
+            </div>
+            <div class="guide-section">
+                <div>Profile</div>
+                <div>Post your video game listings up for rent! View the history of all the game you've rented!</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var helpModal = document.getElementById("help-confirm-modal");
+        var guideModal = document.getElementById("guide-modal");
+        var helpButton = document.getElementById("help-button");
+        var learnMoreButton = document.getElementById("modal-learn-more");
+        var cancelButton = document.getElementById("modal-cancel");
+        
+        helpButton.onclick = function(e){
+            e.preventDefault();
+            helpModal.style.display = "block";
+        }
+        
+        cancelButton.onclick = function(e){
+            e.preventDefault();
+            helpModal.style.display = "none";
+        }
+        
+        learnMoreButton.onclick = function(e){
+            e.preventDefault();
+            helpModal.style.display = "none";
+            guideModal.style.display = "block";
+        }
+        
+        window.onclick = function(e){
+            if(e.target == helpModal){
+                helpModal.style.display = "none";
+            }
+            if(e.target == guideModal){
+                guideModal.style.display = "none";
+            }
+        }
+    </script>
+</div>

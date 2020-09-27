@@ -17,115 +17,33 @@
 }
 /*----------------------------------------------------*/
 
+*{
+    list-style: none;
+    font-family: ralewaysemibold;
+    margin: 0;
+    padding: 0;
+}
+
 .bg{
+    background-image: url("image/bg2.jpg");
     height: 100%;
-    width: 100%;
-}
-
-.bg-container{
-    position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-}
-
-#bg-img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    min-height: 50%;
-    min-width: 50%;
-}
-
-.header{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    border-bottom: transparent;
-}
-
-#head-logo{
-    height: 50px;
-    margin-top: 10px;
-    margin-left: 10px;
 }
 
 .login-container{
-    height: 450px;
     width: 400px;
-    color: white;
-    position: fixed;
-    top: 20%;
-    left: 37%;   
-}
-
-.login-container-bg{
-    height: 450px;
-    width: 400px;
-    background-color: black;
-    opacity: 0.6;
-    color: white;
-    position: fixed;
-    top: 20%;
-    left: 37%;
+    height: fill;
+    margin: 15px;
+    margin-right: 50px;
+    padding: 15px;
+    background-color: #373737;
+    float: right;
+    text-align: center;  
 }
 
 .login-header{
-    position: absolute;
-    top: 10%;
-    left: 13%;
-}
-
-.login-header-label{
+    color: #fff;
     font-size: 30px;
-    font-family: ralewaysemibold;
-    border: none;
-}
-
-.username-label{
-    position: absolute;
-    top: 30%;
-    left: 13%;
-    font-family: ralewayregular;
-}
-
-.password-label{
-    position: absolute;
-    top: 50%;
-    left: 13%;
-    font-family: ralewayregular;    
-}
-
-input[type=text]{
-    width: 290px;
-    height: 40px;
-    border: none;
-    border-bottom: 2px solid #fff;
-    position: absolute;
-    background: transparent;
-    padding: 1px 20px;
-    top: 35%;
-    left: 13%;
-    color: white;
-    font-family: ralewayregular;
-}
-
-input[type=password]{
-    width: 290px;
-    height: 40px;
-    border: none;
-    border-bottom: 2px solid #fff;
-    position: absolute;
-    background: transparent;
-    padding: 1px 20px;
-    top: 55%;
-    left: 13%;
-    color: white;
+    margin-bottom: 15px;
 }
 
 input[type=submit]{
@@ -136,24 +54,89 @@ input[type=submit]{
 /*    background-image: -webkit-linear-gradient(right, #37AC99,#076FAD);*/
     color: white;
     border-style: none;
-    position: absolute;
-    top: 75%;
-    left: 13%;
     font-family: ralewayregular;
     transition: 0.4s;
     transform-style: preserve-3d;
     perspective: 800px;
 }
 
+.form-content{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.item-label{
+    color: #fff;
+    font-family: ralewayregular;
+}
+
+.input-field{
+    width: 100%;
+    height: 30px;
+    background-color: #373737;
+    color: #fff;
+    border: none;
+    border-bottom: 2px solid #fff;
+}
+
+.input-field-container{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.input-field-container .tooltip-text{
+    visibility: hidden;
+    background-color: #fd8f4b;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 105%;
+    white-space: nowrap;
+}
+
+.input-field-container:hover .tooltip-text{
+    visibility: visible;
+}
+
+.input-section{
+    text-align: left;
+    margin-bottom: 20px;
+}
+
 .register{
     color: gray;
-    position: absolute;
-    top: 90%;
-    left: 18%;
     font-family: ralewayregular;
 }
 
 .register-link{
     color: white;
     font-family: ralewayregular;
+}
+
+#nav-bar{
+    height: 5em;
+    background-color: #373737;
+    overflow: hidden;
+    padding: 0 20px;
+    color: white;
+    position: relative;
+    z-index: 99;
+}
+
+.logocontainer{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2.5em;
+    float: left;
+    padding-right: 2.1875em;
+}
+
+.logo{
+    height: 2.5em;
 }
