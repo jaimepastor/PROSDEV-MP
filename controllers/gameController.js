@@ -5,6 +5,7 @@ const bodyparser = require("body-parser")
 const Post = require("../models/post")
 const Review = require("../models/reviews")
 const User = require("../models/user")
+const moment = require("moment")
 
 const app = express()
 
@@ -72,7 +73,21 @@ router.post("/add-game", function(req, res){
 })
 
 router.get("/games", function(req,res){
-    Game.getAll().then((games)=>{
+    Game.getAll().then((tempgames)=>{
+        let games = []
+        for(i in tempgames){
+            var temp ={
+                _id: tempgames[i]._id,
+                title: tempgames[i].title,
+                platform: tempgames[i].platform,
+                genre: tempgames[i].genre,
+                release: moment(tempgames[i].release).format("MMMM D, YYYY"),
+                rating: tempgames[i].rating,
+                link: tempgames[i].link,
+                clicks: tempgames[i].clicks
+            }
+            games.push(temp)
+        }
         User.getAll().then((users)=>{
             res.render("dashboard.hbs", {
                 games, users
@@ -82,7 +97,21 @@ router.get("/games", function(req,res){
 })
 
 router.get("/gamelist", function(req,res){
-    Game.getAll().then((games)=>{
+    Game.getAll().then((tempgames)=>{
+        let games = []
+        for(i in tempgames){
+            var temp ={
+                _id: tempgames[i]._id,
+                title: tempgames[i].title,
+                platform: tempgames[i].platform,
+                genre: tempgames[i].genre,
+                release: moment(tempgames[i].release).format("MMMM D, YYYY"),
+                rating: tempgames[i].rating,
+                link: tempgames[i].link,
+                clicks: tempgames[i].clicks
+            }
+            games.push(temp)
+        }
         res.render("gameList.hbs", {
             games
         })
@@ -113,8 +142,18 @@ router.get("/vg/:id", function(req,res){
         Game.edit(req.params.id, temp).then((game)=>{
             Post.getAllPosting(game.title).then((posts)=>{
                 Review.getAll().then((reviews)=>{
+                    var temp = {
+                        _id: game._id,
+                        title: game.title,
+                        platform: game.platform,
+                        genre: game.genre,
+                        release: moment(game.release).format("MMMM D, YYYY"),
+                        rating: game.rating,
+                        link: game.link,
+                        clicks: game.clicks +1
+                    }
                     res.render("spiderman.hbs", {
-                        game, posts, reviews
+                        temp, posts, reviews
                     })
                 })
             })

@@ -4,6 +4,7 @@ const Cart = require("../models/cart")
 const Game = require("../models/game")
 const Post = require("../models/post")
 const bodyparser = require("body-parser")
+const moment = require("moment")
 
 const app = express()
 
@@ -33,7 +34,7 @@ router.post("/add-to-cart", function(req, res){
                 link : game.link,
                 user : post.user,
                 borrower: req.session.email,
-                release : game.release,
+                release : moment(game.release).format("MMMM D, YYYY"),
                 duration : req.body.duration,
                 ID: post._id
             }
@@ -56,7 +57,21 @@ router.post("/add-to-cart", function(req, res){
 
 router.get("/", function(req, res){
     cartowner = req.session.email
-    Cart.getAll().then((items)=>{
+    Cart.getAll().then((tempitems)=>{
+        let items = []
+        for(i in tempitems){
+            var temp = {
+                title: tempitems[i].title,
+                price: tempitems[i].price, //change to duration
+                link: tempitems[i].link,
+                user: tempitems[i].user,
+                borrower: tempitems[i].borrower,
+                release: moment(tempitems[i].release).format("MMMM D, YYYY"),
+                duration: tempitems[i].duration,
+                ID: tempitems[i].ID
+            }
+            items.push(temp)
+        }
         res.render("cart.hbs", {
             items, cartowner
         })
